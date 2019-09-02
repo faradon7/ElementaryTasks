@@ -1,0 +1,7 @@
+C:\Users\farik\source\repos\NumericalSequence\NumericalSequence\bin\Debug\NumericalSequence.exe.config
+C:\Users\farik\source\repos\NumericalSequence\NumericalSequence\bin\Debug\NumericalSequence.exe
+C:\Users\farik\source\repos\NumericalSequence\NumericalSequence\bin\Debug\NumericalSequence.pdb
+C:\Users\farik\source\repos\NumericalSequence\NumericalSequence\obj\Debug\NumericalSequence.csprojAssemblyReference.cache
+C:\Users\farik\source\repos\NumericalSequence\NumericalSequence\obj\Debug\NumericalSequence.csproj.CoreCompileInputs.cache
+C:\Users\farik\source\repos\NumericalSequence\NumericalSequence\obj\Debug\NumericalSequence.exe
+C:\Users\farik\source\repos\NumericalSequence\NumericalSequence\obj\Debug\NumericalSequence.pdb
