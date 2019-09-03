@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Agregate.cs" />
+    <Compile Include="FibonacciSequenseApp.cs" />
     <Compile Include="ConsoleUI.cs" />
     <Compile Include="Counter.cs" />
     <Compile Include="Program.cs" />

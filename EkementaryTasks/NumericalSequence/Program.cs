@@ -9,14 +9,14 @@ namespace NumericalSequence
 {
     class Program
     {
-        public static NaturalNumbers NaturalNumbers { get; } = new NaturalNumbers();
 
-        public static IUserCommunication UserCommunication { get ; set; } = new ConsoleUI();
+        public static NumericalSequenseApp NumericalSequence { get; } = new NumericalSequenseApp(new ConsoleUI());
+
 
         static void Main(string[] args)
         {
 
-            NaturalNumbers.GetSequense(UserCommunication);
+            NumericalSequence.AppStart();
 
         }
 

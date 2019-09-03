@@ -9,7 +9,7 @@ namespace MyLibrary
 {
     public interface IUserCommunication
     {
-        string GetUserInput();
+        string GetUserInput(string startMessage);
 
         void Output(double a);
 
@@ -18,6 +18,8 @@ namespace MyLibrary
         void Message(string message);
 
         void Print(IEnumerable collection);
+
+        bool WantContinue();
 
     }
 }

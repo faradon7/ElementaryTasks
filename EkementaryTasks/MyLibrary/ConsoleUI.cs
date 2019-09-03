@@ -4,22 +4,23 @@ using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Numerics;
 
 namespace MyLibrary
 {
     public class ConsoleUI : IUserCommunication
     {
-        public string GetUserInput()
+        public string GetUserInput(string start)
         {
             string userInput;
-                Console.Write("Enter natural number: ");
 
-                userInput = Console.ReadLine();
-            if (string.IsNullOrWhiteSpace(userInput))
-            {
-                userInput = string.Empty;
-            }
+            Console.Write(start);
+
+            userInput = Console.ReadLine();
+
+            //if (string.IsNullOrWhiteSpace(userInput))
+            //{
+            //    userInput = string.Empty;
+            //}
             return userInput;
         }
 
@@ -31,7 +32,7 @@ namespace MyLibrary
 
         public void Message(string message)
         {
-            Console.WriteLine(message);
+            Console.Write(message);
         }
 
         public void Output(StringBuilder sb)
@@ -41,12 +42,23 @@ namespace MyLibrary
 
         public void Print(IEnumerable row)
         {
+            Console.WriteLine();
             foreach (var item in row)
             {
                 Console.Write(item);
                 Console.Write(", ");
             }
         }
-        
+
+        public bool WantContinue()
+        {
+            Console.WriteLine();
+
+            string resp = GetUserInput(StringsConstants.wantContinue).ToUpper();
+
+            return (resp == "YES" | resp == "Y");
+
+        }
+
     }
 }

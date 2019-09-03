@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
-namespace NumericalSequence
+namespace MyLibrary
 {
-    public class Parser
+    public class Parser : IParser
     {
         public string ExtractDigits(string s, out bool isExtracted)
         {

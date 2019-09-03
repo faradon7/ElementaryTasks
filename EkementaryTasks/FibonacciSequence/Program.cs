@@ -9,23 +9,23 @@ namespace FibonacciSequence
 {
     class Program
     {
-        public static Agregate Agregate = new Agregate(new ConsoleUI());
+        public static FibonacciSequenseApp Agregate = new FibonacciSequenseApp(new ConsoleUI());
         static void Main(string[] args)
         {
 
-            Agregate.Run();
+            Agregate.AppStart();
 
-            while (true)
-            {
+            //while (true)
+            //{
 
-            Counter c = new Counter();
-                double from = double.Parse(Console.ReadLine());
-                double to = double.Parse(Console.ReadLine());
+            //Counter c = new Counter();
+            //    double from = double.Parse(Console.ReadLine());
+            //    double to = double.Parse(Console.ReadLine());
 
-            c.GetSequence(from, to);
+            //c.GetSequence(from, to);
 
-            Console.ReadKey();
-            }
+            //Console.ReadKey();
+            //}
         }
     }
 }
