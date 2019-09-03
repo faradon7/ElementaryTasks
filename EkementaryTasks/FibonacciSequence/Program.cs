@@ -9,7 +9,7 @@ namespace FibonacciSequence
 {
     class Program
     {
-        public static FibonacciSequenseApp Agregate = new FibonacciSequenseApp(new ConsoleUI());
+        public static FibonacciSequenseApp Agregate = new FibonacciSequenseApp(new MyLibrary.ConsoleUI());
         static void Main(string[] args)
         {
 

@@ -9,7 +9,7 @@ namespace MyLibrary
 {
     public class ConsoleUI : IUserCommunication
     {
-        public string GetUserInput(string start)
+        public virtual string GetUserInput(string start)
         {
             string userInput;
 

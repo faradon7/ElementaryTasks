@@ -5,3 +5,13 @@ C:\Users\farik\source\repos\NumericalSequence\FibonacciSequence\obj\Debug\Fibona
 C:\Users\farik\source\repos\NumericalSequence\FibonacciSequence\obj\Debug\FibonacciSequence.csproj.CoreCompileInputs.cache
 C:\Users\farik\source\repos\NumericalSequence\FibonacciSequence\obj\Debug\FibonacciSequence.exe
 C:\Users\farik\source\repos\NumericalSequence\FibonacciSequence\obj\Debug\FibonacciSequence.pdb
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.csprojAssemblyReference.cache
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.csproj.CoreCompileInputs.cache
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.exe
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.pdb
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\bin\Debug\FibonacciSequence.exe.config
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\bin\Debug\FibonacciSequence.exe
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\bin\Debug\FibonacciSequence.pdb
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\bin\Debug\MyLibrary.dll
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\bin\Debug\MyLibrary.pdb
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.csproj.CopyComplete

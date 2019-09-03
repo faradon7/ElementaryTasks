@@ -11,7 +11,8 @@ namespace FibonacciSequence
     {
         #region fields
 
-        public string input { get; set; }
+        public string from { get; set; }
+        public string to { get; set; }
 
         private IParser parser = new Parser();
 
@@ -21,6 +22,13 @@ namespace FibonacciSequence
 
         private IUserCommunication _userCommunication;
 
+        public const string instructions =
+           "Then the program will return the sequence of Fibonacci numbers in the specified range.";
+
+        public const string startMessage = "Enter range of Fibonacci numbers sequense: ";
+
+        public const string remark = "For correct operation, enter an integer natural number.";
+        
         #endregion
 
         #region properties
@@ -61,9 +69,45 @@ namespace FibonacciSequence
 
             string firstArg = userCommunication.GetUserInput(StringsConstants.inputFirstArg);
 
-            //if(!validate(firstArg))
-
             string secondArg = userCommunication.GetUserInput(StringsConstants.inputSecondArg);
+
+            if (validate(firstArg) & validate(firstArg))
+            {
+                bool hasDigitsFirst;
+                bool hasDigitsSecond;
+
+                firstArg = parser.ExtractDigits(firstArg, out hasDigitsFirst);
+                secondArg = parser.ExtractDigits(secondArg, out hasDigitsSecond);
+
+                _userCommunication.Message("Passed range: ");
+
+                if (!(hasDigitsFirst & hasDigitsSecond))
+                {
+                    _userCommunication.Message(firstArg);
+
+                    printInstructions();
+                }
+
+                _userCommunication.Message(firstArg);
+                _userCommunication.Message(" ");
+                _userCommunication.Message(secondArg);
+
+                from = firstArg;
+                to = secondArg;
+
+                counter.GetSequence(from, to);
+            }
+            else
+            {
+                printInstructions();
+            }
+
+            if (_userCommunication.WantContinue())
+            {
+                AppStart();
+            }
+
+            Environment.Exit(0);
 
         }
 
@@ -82,6 +126,21 @@ namespace FibonacciSequence
             }
 
             return true;
+        }
+
+        public void printInstructions()
+        {
+            //StringBuilder remark =
+            // new StringBuilder("For correct operation, enter an integer natural number.");
+
+            //remark.AppendLine();
+
+            //remark.Append("Then the program will return the row of natural ");
+            //remark.Append("numbers whose square is less than a given number.");
+
+            _userCommunication.Message(remark);
+
+            _userCommunication.Message(instructions);
         }
 
     }

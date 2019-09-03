@@ -15,3 +15,13 @@ C:\Users\farik\EkementaryTasks\NumericalSequence\obj\Debug\NumericalSequence.csp
 C:\Users\farik\EkementaryTasks\NumericalSequence\obj\Debug\NumericalSequence.csproj.CopyComplete
 C:\Users\farik\EkementaryTasks\NumericalSequence\obj\Debug\NumericalSequence.exe
 C:\Users\farik\EkementaryTasks\NumericalSequence\obj\Debug\NumericalSequence.pdb
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\NumericalSequence\bin\Debug\NumericalSequence.exe.config
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\NumericalSequence\bin\Debug\NumericalSequence.exe
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\NumericalSequence\bin\Debug\NumericalSequence.pdb
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\NumericalSequence\bin\Debug\MyLibrary.dll
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\NumericalSequence\bin\Debug\MyLibrary.pdb
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\NumericalSequence\obj\Debug\NumericalSequence.csprojAssemblyReference.cache
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\NumericalSequence\obj\Debug\NumericalSequence.csproj.CoreCompileInputs.cache
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\NumericalSequence\obj\Debug\NumericalSequence.csproj.CopyComplete
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\NumericalSequence\obj\Debug\NumericalSequence.exe
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\NumericalSequence\obj\Debug\NumericalSequence.pdb

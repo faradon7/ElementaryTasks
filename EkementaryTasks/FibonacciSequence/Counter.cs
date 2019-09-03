@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace FibonacciSequence
 {
-    class Counter
+    class Counter /*: IEnumerable*/
     {
         #region fields
 
@@ -36,8 +37,11 @@ namespace FibonacciSequence
         }
 
 
-        public void GetSequence(double from, double to)
+        public void GetSequence(string start, string end)
         {
+            double from = double.Parse(start);
+            double to = double.Parse(end);
+
             double k = 0.0;
             double biggerNearest = findNearestNumber(from, out k);
 
@@ -74,6 +78,22 @@ namespace FibonacciSequence
             }
             return nearest;
         }
+
+        //public IEnumerable count(double u)
+        //{
+        //    for (double i = 0; i <= limit; i++)
+        //    {
+        //        yield return i;
+        //    }
+        //}
+
+        //IEnumerator IEnumerable.GetEnumerator()
+        //{
+        //    for (double i = 0; i <= limit; i++)
+        //    {
+        //        yield return i;
+        //    }
+        //}
 
         #endregion
 
