@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,29 +12,22 @@ namespace FibonacciSequence
     {
         #region fields
 
-        public string from { get; set; }
-        public string to { get; set; }
+        public double from { get; set; }
+        public double to { get; set; }
 
-        private IParser parser = new Parser();
+        private IParser _parser = new Parser();
 
-        private Counter counter = new Counter();
+        private Counter _counter = new Counter();
 
-        private IStringValidator stringValidator = new StringValidator();
+        private IValidator _validator = new Validator();
 
         private IUserCommunication _userCommunication;
 
-        public const string instructions =
-           "Then the program will return the sequence of Fibonacci numbers in the specified range.";
-
-        public const string startMessage = "Enter range of Fibonacci numbers sequense: ";
-
-        public const string remark = "For correct operation, enter an integer natural number.";
-        
         #endregion
 
         #region properties
 
-        #region properties
+        public IEnumerable rangedFibonacciSequence { get; private set; }
 
         public IUserCommunication userCommunication
         {
@@ -52,8 +46,6 @@ namespace FibonacciSequence
 
         #endregion
 
-        #endregion
-
         #region ctors
 
         public FibonacciSequenseApp(IUserCommunication communication)
@@ -67,35 +59,42 @@ namespace FibonacciSequence
         {
             userCommunication.Message(StringsConstants.startMessage);
 
-            string firstArg = userCommunication.GetUserInput(StringsConstants.inputFirstArg);
+            string[] start = new [] { "From what number to start the search for values: ", "To which number to look for values: " };
 
-            string secondArg = userCommunication.GetUserInput(StringsConstants.inputSecondArg);
+            string[] args = _userCommunication.GetUserInput(start);
 
-            if (validate(firstArg) & validate(firstArg))
+            double[] range = new double[2]; 
+
+            if (validate(args[0]) & validate(args[1]))
             {
-                bool hasDigitsFirst;
-                bool hasDigitsSecond;
+                bool hasDigits;
 
-                firstArg = parser.ExtractDigits(firstArg, out hasDigitsFirst);
-                secondArg = parser.ExtractDigits(secondArg, out hasDigitsSecond);
+                range = _parser.ExtractDigits(args, out hasDigits);
 
-                _userCommunication.Message("Passed range: ");
 
-                if (!(hasDigitsFirst & hasDigitsSecond))
+                _userCommunication.Message("Passed range ");
+
+                _userCommunication.PrintArqs(range);
+
+                if (hasDigits & _validator.IsValidNumbers(range))
                 {
-                    _userCommunication.Message(firstArg);
+
+                    from = range[0];
+                    to = range[1];
+
+                    rangedFibonacciSequence = _counter.GetSequence(from, to);
+
+                    _userCommunication.Message("Fibonacci sequense in specified range: ");
+                    _userCommunication.Print(rangedFibonacciSequence);
+                }
+                else
+                {
+                    _userCommunication.Warning("Incorrect range ");
+                    _userCommunication.Warning("Digits not found or second value of range less then first ");
 
                     printInstructions();
                 }
 
-                _userCommunication.Message(firstArg);
-                _userCommunication.Message(" ");
-                _userCommunication.Message(secondArg);
-
-                from = firstArg;
-                to = secondArg;
-
-                counter.GetSequence(from, to);
             }
             else
             {
@@ -113,15 +112,15 @@ namespace FibonacciSequence
 
         private bool validate(string s)
         {
-            if (stringValidator.IsValid(s, validCheks.stringIsEmpty))
+            if (_validator.IsValid(s, validCheks.stringIsEmpty))
             {
-                _userCommunication.Message(StringsConstants.empty);
+                _userCommunication.Warning(StringsConstants.empty);
                 return false;
             }
 
-            if (stringValidator.IsValid(s, validCheks.stringHasWhitheSpaces))
+            if (_validator.IsValid(s, validCheks.stringHasWhitheSpaces))
             {
-                _userCommunication.Message(StringsConstants.whiteSpace);
+                _userCommunication.Warning(StringsConstants.whiteSpace);
                 return false;
             }
 
@@ -130,17 +129,13 @@ namespace FibonacciSequence
 
         public void printInstructions()
         {
-            //StringBuilder remark =
-            // new StringBuilder("For correct operation, enter an integer natural number.");
+            StringBuilder instructions = new StringBuilder("You need to enter range of natural numbers: ");
 
-            //remark.AppendLine();
+            instructions.AppendLine("First argument must be greater the second.");
 
-            //remark.Append("Then the program will return the row of natural ");
-            //remark.Append("numbers whose square is less than a given number.");
+            instructions.AppendLine("Then the program will return the sequence of Fibonacci numbers in the specified range.");
 
-            _userCommunication.Message(remark);
-
-            _userCommunication.Message(instructions);
+            _userCommunication.PrintInstructions(instructions);
         }
 
     }

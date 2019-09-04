@@ -12,9 +12,9 @@ namespace MyLibrary
 
         public const string startMessage = "Enter range of Fibonacci numbers sequence";
 
-        public const string inputFirstArg = "Input first number then press enter key: ";
+        public const string inputFirstArg = "Input first argument and press enter key: ";
 
-        public const string inputSecondArg = "Input first number then press enter key: ";
+        public const string inputSecondArg = "Input second argument and press enter key: ";
 
         #endregion
 

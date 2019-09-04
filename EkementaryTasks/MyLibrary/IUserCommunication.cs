@@ -11,15 +11,22 @@ namespace MyLibrary
     {
         string GetUserInput(string startMessage);
 
-        void Output(double a);
+        string[] GetUserInput(string[] startMessage);
+
+        void PrintArqs(double[] args);
 
         void Output(StringBuilder sb);
 
-        void Message(string message);
+        void PrintInstructions(StringBuilder sb);
+
+        void Warning (string message);
+
+        void Message (string message);
+
+        void MessageLn (string message);
 
         void Print(IEnumerable collection);
 
         bool WantContinue();
-
     }
 }

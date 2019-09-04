@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,7 @@ namespace NumericalSequence
 
         private Counter counter = new Counter();
 
-        private IStringValidator stringValidator = new StringValidator();
+        private IValidator stringValidator = new Validator();
 
         private IUserCommunication _userCommunication;
 
@@ -32,6 +33,8 @@ namespace NumericalSequence
         #endregion
 
         #region properties
+
+        public IEnumerable rangedNumericalSequence { get; private set; }
 
         public IUserCommunication userCommunication
         {
@@ -70,15 +73,18 @@ namespace NumericalSequence
 
                 if (!isDigitsFound)
                 {
-                    _userCommunication.Message(s);
+                    _userCommunication.MessageLn(s);
 
                     printInstructions();
                 }
-                _userCommunication.Message(s);
+                _userCommunication.MessageLn(s);
 
                 input = s;
 
-                counter.PrintNaturalRow(input, userCommunication);
+                rangedNumericalSequence = counter.GetSequence(input, userCommunication);
+
+                _userCommunication.Message("Sequense of natural numbers whose square is less than a specified number: ");
+                _userCommunication.Print(rangedNumericalSequence);
             }
             else
             {
@@ -112,14 +118,6 @@ namespace NumericalSequence
 
         public void printInstructions()
         {
-            //StringBuilder remark =
-            // new StringBuilder("For correct operation, enter an integer natural number.");
-
-            //remark.AppendLine();
-
-            //remark.Append("Then the program will return the row of natural ");
-            //remark.Append("numbers whose square is less than a given number.");
-
             _userCommunication.Message(remark);
 
             _userCommunication.Message(instructions);

@@ -7,13 +7,23 @@ using System.Collections;
 
 namespace FibonacciSequence
 {
-    class Counter /*: IEnumerable*/
+    class Counter : IEnumerable
     {
         #region fields
 
         private double ln5d2 = 0.0; // Ln(5) / 2
 
         private double lnFi = 0.0; //The natural logarithm of a Fi, where Fi is a "Golden Ratio"
+
+        private double from = 0.0;
+
+        private double to = 0.0;
+
+        double biggerNearest = 0.0;
+
+        double nextNumber = 0.0;
+
+        double sum = 0.0;
 
         #endregion
 
@@ -37,36 +47,25 @@ namespace FibonacciSequence
         }
 
 
-        public void GetSequence(string start, string end)
+        public IEnumerable GetSequence(double start, double end)
         {
-            double from = double.Parse(start);
-            double to = double.Parse(end);
+            from = start;
+            to = end;
 
             double k = 0.0;
-            double biggerNearest = findNearestNumber(from, out k);
 
-            //double nextNumber = FindNearestNumber(biggerNearest + 1.0);
-            double nextNumber = GetByPositionNumber(k + 1);
+            biggerNearest = findNearestNumber(from, out k);
 
-            double sum = 0.0;
+            nextNumber = GetByPositionNumber(k + 1);
 
-            Console.Write(biggerNearest + " " + nextNumber);
-
-            while ((sum = biggerNearest + nextNumber) <= to)
-            {
-                biggerNearest = nextNumber;
-
-                nextNumber = sum;
-
-                Console.Write(" " + sum + " ");
-            }
+            return this as IEnumerable;
         }
 
         private double findNearestNumber(double n, out double k)
         {
             // Finding the nearest bigger Fibonacci number bye the Binet's formula
 
-            double /*k, */nearest;
+            double nearest;
 
             k = Math.Round((ln5d2 + Math.Log(n)) / lnFi);   // number of Fibonacci sequence member
 
@@ -79,21 +78,21 @@ namespace FibonacciSequence
             return nearest;
         }
 
-        //public IEnumerable count(double u)
-        //{
-        //    for (double i = 0; i <= limit; i++)
-        //    {
-        //        yield return i;
-        //    }
-        //}
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            yield return biggerNearest;
 
-        //IEnumerator IEnumerable.GetEnumerator()
-        //{
-        //    for (double i = 0; i <= limit; i++)
-        //    {
-        //        yield return i;
-        //    }
-        //}
+            yield return nextNumber;
+            
+            while ((sum = biggerNearest + nextNumber) <= to)
+            {
+                biggerNearest = nextNumber;
+
+                nextNumber = sum;
+                yield return sum;
+            }
+            yield break;
+        }
 
         #endregion
 

@@ -15,9 +15,7 @@ namespace NumericalSequence
 
         static void Main(string[] args)
         {
-
             NumericalSequence.AppStart();
-
         }
 
         

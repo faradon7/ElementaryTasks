@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace MyLibrary
 {
-    public interface IStringValidator
+    public interface IValidator
     {
         bool IsValid(string s, validCheks check);
+
+        bool IsValidNumbers(double[] range);
     }
 }

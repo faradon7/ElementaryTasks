@@ -24,7 +24,7 @@ namespace NumericalSequence
 
         }
 
-        public void PrintNaturalRow(string input, IUserCommunication communication)
+        public IEnumerable GetSequence(string input, IUserCommunication communication)
         {
             BigInteger.TryParse(input, out inputNumber);
 
@@ -32,25 +32,10 @@ namespace NumericalSequence
 
             limit = Math.Floor(squareRoot);
 
-            //for (double i = 0; i <= squareRoot; i++)
-            //{
-            //    communication.Output(i);
-            //}
 
-            IEnumerable repo = count(squareRoot);
+            //communication.Print(this);
+            return this as IEnumerable;
 
-            //communication.Print(repo);
-
-            communication.Print(this);
-
-        }
-
-        public IEnumerable count(double u)
-        {
-            for (double i = 0; i <= limit; i++)
-            {
-                yield return i;
-            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()

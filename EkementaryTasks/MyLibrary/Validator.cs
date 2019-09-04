@@ -12,7 +12,7 @@ namespace MyLibrary
         isNumber
     }
 
-    public class StringValidator : IStringValidator
+    public class Validator : IValidator
     {
         public bool IsValid(string s, validCheks check)
         {
@@ -35,6 +35,11 @@ namespace MyLibrary
                     }
                 default: return false;
             }
+        }
+
+        public bool IsValidNumbers(double[] range)
+        {
+            return (range[0] < range[1]);
         }
     }
 }

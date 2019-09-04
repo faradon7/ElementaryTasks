@@ -1,15 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace MyLibrary
 {
+    public enum MessageType
+    {
+        Instructions,
+        Remark,
+        Warning,
+        Default
+    }
     public class ConsoleUI : IUserCommunication
     {
-        public virtual string GetUserInput(string start)
+        public string GetUserInput(string start)
         {
             string userInput;
 
@@ -17,22 +21,30 @@ namespace MyLibrary
 
             userInput = Console.ReadLine();
 
-            //if (string.IsNullOrWhiteSpace(userInput))
-            //{
-            //    userInput = string.Empty;
-            //}
             return userInput;
         }
 
-        public void Output(double sequenceMember)
+        public string[] GetUserInput(string[] start)
         {
-            Console.Write(sequenceMember);
-            Console.Write(", ");
+            string[] userInput = new string[start.Length];
+            for (int i = 0; i < start.Length; i++)
+            {
+                Console.Write(start[i]);
+
+                userInput[i] = Console.ReadLine();
+
+            }
+
+            return userInput;
         }
 
         public void Message(string message)
         {
             Console.Write(message);
+        }
+        public void MessageLn(string message)
+        {
+            Console.WriteLine(message);
         }
 
         public void Output(StringBuilder sb)
@@ -40,14 +52,31 @@ namespace MyLibrary
             Console.WriteLine(sb);
         }
 
+        public void PrintArqs(double[] args)
+        {
+            StringBuilder s = new StringBuilder("from ");
+            s.Append(args[0]);
+            s.Append(" to ");
+            s.Append(args[1]);
+            Console.WriteLine(s);
+
+        }
+
         public void Print(IEnumerable row)
         {
-            Console.WriteLine();
             foreach (var item in row)
             {
                 Console.Write(item);
                 Console.Write(", ");
             }
+            Console.WriteLine();
+        }
+
+        public void PrintInstructions(StringBuilder sb)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(sb);
+            Console.ResetColor();
         }
 
         public bool WantContinue()
@@ -60,5 +89,13 @@ namespace MyLibrary
 
         }
 
+        public void Warning(string message)
+        {
+            Console.Beep();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(message);
+
+            Console.ResetColor();
+        }
     }
 }

@@ -34,5 +34,37 @@ namespace MyLibrary
                 return "No digits found";
             }
         }
+        public double[] ExtractDigits(string[] args, out bool isExtracted)
+        {
+            double[] parsedNumbers = new double[args.Length];
+
+            isExtracted = true;
+
+            Regex regex = new Regex(@"\d+");
+
+            for (int i = 0; i < args.Length; i++)
+            {
+                string mathcString = string.Empty;
+                double rangeArg;
+
+                MatchCollection matches = regex.Matches(args[i]);
+
+                if (!(matches.Count > 0))
+                {
+                    isExtracted = false;
+                    continue;
+                }
+
+                foreach (Match match in matches)
+                {
+                    mathcString = match.Value;
+                }
+                    bool result = double.TryParse(mathcString, out rangeArg);
+
+                parsedNumbers[i] = (rangeArg == 0) ? 1 : rangeArg;
+            }
+
+            return parsedNumbers;
+        }
     }
 }

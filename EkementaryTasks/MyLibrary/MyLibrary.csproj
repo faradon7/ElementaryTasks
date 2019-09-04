@@ -43,12 +43,12 @@
   <ItemGroup>
     <Compile Include="ConsoleUI.cs" />
     <Compile Include="IParser.cs" />
-    <Compile Include="IStringValidator.cs" />
+    <Compile Include="IValidator.cs" />
     <Compile Include="IUserCommunication.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringsConstants.cs" />
-    <Compile Include="StringValidator.cs" />
+    <Compile Include="Validator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
