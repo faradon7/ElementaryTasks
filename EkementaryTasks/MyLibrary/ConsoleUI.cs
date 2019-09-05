@@ -11,7 +11,7 @@ namespace MyLibrary
         Warning,
         Default
     }
-    public class ConsoleUI : IUserCommunication
+    public class ConsoleUI : IUserCommunication, IFileParserView
     {
         public string GetUserInput(string start)
         {
@@ -96,6 +96,36 @@ namespace MyLibrary
             Console.WriteLine(message);
 
             Console.ResetColor();
+        }
+
+        public Enum ChooseMode(string question)
+        {
+            Console.WriteLine();
+
+            string resp = GetUserInput(question).ToUpper();
+
+            switch (resp)
+            {
+                case ("C"):
+                    {
+                        return UserResponse.Count;
+                    }
+                case ("COUNT"):
+                    {
+                        return UserResponse.Count;
+                    }
+                    case ("R"):
+                    {
+                        return UserResponse.Count;
+                    }
+                case ("REPLACE"):
+                    {
+                        return UserResponse.Count;
+                    }
+
+                default:
+                    return UserResponse.Exit;
+            }
         }
     }
 }

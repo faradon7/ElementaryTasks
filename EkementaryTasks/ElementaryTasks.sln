@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FibonacciSequence", "Fibona
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLibrary", "MyLibrary\MyLibrary.csproj", "{9D50DE3C-935C-4C18-9447-06633486C8FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileParser", "FileParser\FileParser.csproj", "{04E3F08E-2DF3-4284-B86C-046B060D5FA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9D50DE3C-935C-4C18-9447-06633486C8FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D50DE3C-935C-4C18-9447-06633486C8FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D50DE3C-935C-4C18-9447-06633486C8FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04E3F08E-2DF3-4284-B86C-046B060D5FA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04E3F08E-2DF3-4284-B86C-046B060D5FA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04E3F08E-2DF3-4284-B86C-046B060D5FA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04E3F08E-2DF3-4284-B86C-046B060D5FA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
