@@ -10,26 +10,32 @@ namespace FileParser
 {
     abstract class TextHandler : IEnumerable<int>
     {
-        private const int DefaultBufferSize = 10240;
+        protected const int DefaultBufferSize = 10240;
 
-        public Func<Stream> streamSource;
+        public Encoding DefaultEncoding { get; set; } = Encoding.UTF8;
 
-        public readonly Encoding encoding;
+        public readonly string FilePath;
 
-        public StreamReader stream;
+        public int Amount { get; protected set; }
+
+        //protected StreamReader Stream;
 
 
 
-        public IEnumerator<int> GetEnumerator()
+        public TextHandler(string path)
         {
-            return GetEnumeratorImpl(stream);
+            FilePath = path;
         }
+
+
+        public abstract IEnumerator<int> GetEnumerator();
+
 
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
         }
 
-        protected abstract IEnumerator<int> GetEnumeratorImpl(StreamReader stream);
+        
     }
 }

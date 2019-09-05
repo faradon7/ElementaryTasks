@@ -21,25 +21,27 @@ namespace FileParser
         {
             Enum mode = _userCommunication.ChooseMode("Count the number of string entries or replace all string entries? [Count/Replace] ");
 
-            switch (mode) // можно и ifами
-            {
-                case UserResponse.Count:
-                    {
-                        StringsCounter counter = new StringsCounter();
-                        break;
-                    }
-                case UserResponse.Replace:
-                    {
-                        StringReplacer replacer = new StringReplacer();
-                        break;
-                    }
-                case UserResponse.Exit:
-                    {
-                        _userCommunication.WantContinue();
-                        break;
-                    }
 
-            }
+
+            //switch (mode) // можно и ifами
+            //{
+            //    case UserResponse.Count:
+            //        {
+            //            StringsCounter counter = new StringsCounter();
+            //            break;
+            //        }
+            //    case UserResponse.Replace:
+            //        {
+            //            StringReplacer replacer = new StringReplacer();
+            //            break;
+            //        }
+            //    case UserResponse.Exit:
+            //        {
+            //            _userCommunication.WantContinue();
+            //            break;
+            //        }
+
+            //}
         }
     }
 }

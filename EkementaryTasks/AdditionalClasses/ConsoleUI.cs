@@ -117,11 +117,11 @@ namespace AdditionalClasses
                     }
                     case ("R"):
                     {
-                        return UserResponse.Count;
+                        return UserResponse.Replace;
                     }
                 case ("REPLACE"):
                     {
-                        return UserResponse.Count;
+                        return UserResponse.Replace;
                     }
 
                 default:

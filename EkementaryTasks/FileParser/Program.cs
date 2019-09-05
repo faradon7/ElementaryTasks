@@ -36,21 +36,21 @@ namespace FileParser
 
             //Console.WriteLine(dogsCounter);
 
-            StringsCounter s = new StringsCounter();
+            //StringsCounter s = new StringsCounter();
 
-            Stream stream = File.OpenRead(@"C:\Users\farik\EkementaryTasks\Biblija.txt");
+            StringReplacer rep = new StringReplacer(@"C:\Users\farik\EkementaryTasks\1.txt", "Завет", "обещание");
 
-            s.stream = new StreamReader(stream, Encoding.UTF8, true, 10240);
 
-            int amount = 0;
 
-            s.entry = "завет";
+            //Stream stream = File.OpenRead(@"C:\Users\farik\EkementaryTasks\Biblija.txt");
 
-            foreach (var item in s)
-            {
-                amount += item;
-            }
-            Console.WriteLine(amount);
+            //rep.stream = new StreamReader(stream, Encoding.UTF8, true, 10240);
+
+            //StringsCounter rep = new StringsCounter(@"C:\Users\farik\EkementaryTasks\Biblija.txt", "завет");
+
+            //rep.Count();
+            Console.WriteLine(rep.Replace());
+            Console.WriteLine("Finish");
             Console.ReadLine();
 
         }
