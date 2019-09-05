@@ -1,4 +1,4 @@
-﻿namespace MyLibrary{
+﻿namespace AdditionalClasses{
 
     public enum UserResponse
     {

@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Text;
+using Interfaces;
 
-namespace MyLibrary
+namespace AdditionalClasses
 {
     public enum MessageType
     {

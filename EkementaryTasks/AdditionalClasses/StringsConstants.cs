@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyLibrary
+namespace AdditionalClasses
 {
     public class StringsConstants
     {

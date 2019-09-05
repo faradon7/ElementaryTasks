@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using Interfaces;
 
-namespace MyLibrary
+namespace AdditionalClasses
 {
-    public enum validCheks
-    {
-        stringIsEmpty,
-        stringHasWhitheSpaces,
-        isNumber
-    }
-
     public class Validator : IValidator
     {
         public bool IsValid(string s, validCheks check)

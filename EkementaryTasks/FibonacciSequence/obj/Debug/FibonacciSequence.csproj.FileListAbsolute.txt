@@ -18,10 +18,12 @@ C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\F
 C:\Users\farik\EkementaryTasks\FibonacciSequence\bin\Debug\FibonacciSequence.exe.config
 C:\Users\farik\EkementaryTasks\FibonacciSequence\bin\Debug\FibonacciSequence.exe
 C:\Users\farik\EkementaryTasks\FibonacciSequence\bin\Debug\FibonacciSequence.pdb
-C:\Users\farik\EkementaryTasks\FibonacciSequence\bin\Debug\MyLibrary.dll
-C:\Users\farik\EkementaryTasks\FibonacciSequence\bin\Debug\MyLibrary.pdb
 C:\Users\farik\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.csprojAssemblyReference.cache
 C:\Users\farik\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.csproj.CoreCompileInputs.cache
 C:\Users\farik\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.csproj.CopyComplete
 C:\Users\farik\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.exe
 C:\Users\farik\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.pdb
+C:\Users\farik\EkementaryTasks\FibonacciSequence\bin\Debug\AdditionalClasses.dll
+C:\Users\farik\EkementaryTasks\FibonacciSequence\bin\Debug\Interfaces.dll
+C:\Users\farik\EkementaryTasks\FibonacciSequence\bin\Debug\AdditionalClasses.pdb
+C:\Users\farik\EkementaryTasks\FibonacciSequence\bin\Debug\Interfaces.pdb

@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MyLibrary;
+using AdditionalClasses;
+using Interfaces;
 
 namespace NumericalSequence
 {
@@ -56,8 +57,6 @@ namespace NumericalSequence
             userCommunication = communication;
         }
 
-        #region methods
-
         public void AppStart()
         {
             string s = _userCommunication.GetUserInput(startMessage);
@@ -81,7 +80,7 @@ namespace NumericalSequence
 
                 input = s;
 
-                rangedNumericalSequence = counter.GetSequence(input, userCommunication);
+                rangedNumericalSequence = counter.GetSequence(input);
 
                 _userCommunication.Message("Sequense of natural numbers whose square is less than a specified number: ");
                 _userCommunication.Print(rangedNumericalSequence);
@@ -122,8 +121,6 @@ namespace NumericalSequence
 
             _userCommunication.Message(instructions);
         }
-
-        #endregion
     }
 
 }

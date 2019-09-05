@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Numerics;
 using System.Collections;
-using MyLibrary;
+
 
 namespace NumericalSequence
 {
@@ -24,7 +21,7 @@ namespace NumericalSequence
 
         }
 
-        public IEnumerable GetSequence(string input, IUserCommunication communication)
+        public IEnumerable GetSequence(string input)
         {
             BigInteger.TryParse(input, out inputNumber);
 
@@ -32,8 +29,6 @@ namespace NumericalSequence
 
             limit = Math.Floor(squareRoot);
 
-
-            //communication.Print(this);
             return this as IEnumerable;
 
         }

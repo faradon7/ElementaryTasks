@@ -54,9 +54,13 @@
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MyLibrary\MyLibrary.csproj">
-      <Project>{9d50de3c-935c-4c18-9447-06633486c8fd}</Project>
-      <Name>MyLibrary</Name>
+    <ProjectReference Include="..\AdditionalClasses\AdditionalClasses.csproj">
+      <Project>{33fec376-5716-40a7-b0ff-7c577c468a87}</Project>
+      <Name>AdditionalClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{78b6d4f2-3aa6-40dd-99e4-d2289fc6e05c}</Project>
+      <Name>Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
