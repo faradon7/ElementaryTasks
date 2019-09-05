@@ -12,6 +12,12 @@ namespace Interfaces
 
         string[] GetUserInput(string[] startMessage);
 
+        string GetUserInput(string startMessage);
+
+        void Message(string message);
+
+        void Warning(string message);
+
         bool WantContinue();
     }
 }

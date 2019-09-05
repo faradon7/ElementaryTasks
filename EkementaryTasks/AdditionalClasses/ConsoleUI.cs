@@ -101,8 +101,6 @@ namespace AdditionalClasses
 
         public Enum ChooseMode(string question)
         {
-            Console.WriteLine();
-
             string resp = GetUserInput(question).ToUpper();
 
             switch (resp)
