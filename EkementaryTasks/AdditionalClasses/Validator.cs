@@ -3,7 +3,7 @@ using Interfaces;
 
 namespace AdditionalClasses
 {
-    public class Validator : IValidator
+    public class Validator : IStringValidator, INumberValidator
     {
         public bool IsValid(string s, validCheks check)
         {

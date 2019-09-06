@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Interfaces
 {
-    public interface IParser
+    public interface INumberParser
     {
-        string ExtractDigits(string s, out bool isExtracted);
-
         double[] ExtractDigits(string[] args, out bool isExtracted);
     }
 }

@@ -12,10 +12,8 @@ namespace Interfaces
         stringHasWhitheSpaces,
         isNumber
     }
-    public interface IValidator
+    public interface IStringValidator
     {
         bool IsValid(string s, validCheks check);
-
-        bool IsValidNumbers(double[] range);
     }
 }

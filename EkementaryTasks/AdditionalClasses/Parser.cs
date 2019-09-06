@@ -4,7 +4,7 @@ using Interfaces;
 
 namespace AdditionalClasses
 {
-    public class Parser : IParser
+    public class Parser : IStringParser, INumberParser
     {
         public string ExtractDigits(string s, out bool isExtracted)
         {

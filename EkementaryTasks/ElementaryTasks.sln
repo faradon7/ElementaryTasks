@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdditionalClasses", "Additi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{78B6D4F2-3AA6-40DD-99E4-D2289FC6E05C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessBoard", "ChessBoard\ChessBoard.csproj", "{FB26252E-1D63-4BD0-81A5-8A421634F78B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{78B6D4F2-3AA6-40DD-99E4-D2289FC6E05C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78B6D4F2-3AA6-40DD-99E4-D2289FC6E05C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78B6D4F2-3AA6-40DD-99E4-D2289FC6E05C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB26252E-1D63-4BD0-81A5-8A421634F78B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB26252E-1D63-4BD0-81A5-8A421634F78B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB26252E-1D63-4BD0-81A5-8A421634F78B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB26252E-1D63-4BD0-81A5-8A421634F78B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

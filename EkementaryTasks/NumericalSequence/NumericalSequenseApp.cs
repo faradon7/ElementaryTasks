@@ -15,11 +15,11 @@ namespace NumericalSequence
 
         public string input { get; set; }
 
-        private IParser parser = new Parser();
+        private IStringParser parser = new Parser();
 
         private Counter counter = new Counter();
 
-        private IValidator stringValidator = new Validator();
+        private IStringValidator stringValidator = new Validator();
 
         private IUserCommunication _userCommunication;
 

@@ -16,11 +16,13 @@ namespace FibonacciSequence
         public double from { get; set; }
         public double to { get; set; }
 
-        private IParser _parser = new Parser();
+        private INumberParser _parser = new Parser();
 
         private Counter _counter = new Counter();
 
-        private IValidator _validator = new Validator();
+        private IStringValidator _stringValidator = new Validator();
+
+        private INumberValidator _numberValidator = new Validator();
 
         private IUserCommunication _userCommunication;
 
@@ -77,7 +79,7 @@ namespace FibonacciSequence
 
                 _userCommunication.PrintArqs(range);
 
-                if (hasDigits & _validator.IsValidNumbers(range))
+                if (hasDigits & _numberValidator.IsValidNumbers(range))
                 {
 
                     from = range[0];
@@ -113,13 +115,13 @@ namespace FibonacciSequence
 
         private bool validate(string s)
         {
-            if (_validator.IsValid(s, validCheks.stringIsEmpty))
+            if (_stringValidator.IsValid(s, validCheks.stringIsEmpty))
             {
                 _userCommunication.Warning(StringsConstants.empty);
                 return false;
             }
 
-            if (_validator.IsValid(s, validCheks.stringHasWhitheSpaces))
+            if (_stringValidator.IsValid(s, validCheks.stringHasWhitheSpaces))
             {
                 _userCommunication.Warning(StringsConstants.whiteSpace);
                 return false;

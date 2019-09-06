@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{78B6D4F2-3AA6-40DD-99E4-D2289FC6E05C}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Interfaces</RootNamespace>
-    <AssemblyName>Interfaces</AssemblyName>
+    <ProjectGuid>{FB26252E-1D63-4BD0-81A5-8A421634F78B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ChessBoard</RootNamespace>
+    <AssemblyName>ChessBoard</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,13 +43,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IFileParserView.cs" />
-    <Compile Include="INumberParser.cs" />
-    <Compile Include="INumberValidator.cs" />
-    <Compile Include="IStringParser.cs" />
-    <Compile Include="IUserCommunication.cs" />
-    <Compile Include="IStringValidator.cs" />
+    <Compile Include="Application.cs" />
+    <Compile Include="ChessBoard.cs" />
+    <Compile Include="BoardValidator.cs" />
+    <Compile Include="Cell.cs" />
+    <Compile Include="ChessBoardView.cs" />
+    <Compile Include="Figure.cs" />
+    <Compile Include="IBoard.cs" />
+    <Compile Include="IChessBoardView.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AdditionalClasses\AdditionalClasses.csproj">
+      <Project>{33fec376-5716-40a7-b0ff-7c577c468a87}</Project>
+      <Name>AdditionalClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{78b6d4f2-3aa6-40dd-99e4-d2289fc6e05c}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
