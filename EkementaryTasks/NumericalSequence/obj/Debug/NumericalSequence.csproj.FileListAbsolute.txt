@@ -16,8 +16,6 @@ C:\Users\farik\EkementaryTasks\NumericalSequence\obj\Debug\NumericalSequence.pdb
 C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\NumericalSequence\bin\Debug\NumericalSequence.exe.config
 C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\NumericalSequence\bin\Debug\NumericalSequence.exe
 C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\NumericalSequence\bin\Debug\NumericalSequence.pdb
-C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\NumericalSequence\bin\Debug\MyLibrary.dll
-C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\NumericalSequence\bin\Debug\MyLibrary.pdb
 C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\NumericalSequence\obj\Debug\NumericalSequence.csprojAssemblyReference.cache
 C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\NumericalSequence\obj\Debug\NumericalSequence.csproj.CoreCompileInputs.cache
 C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\NumericalSequence\obj\Debug\NumericalSequence.csproj.CopyComplete
@@ -27,3 +25,7 @@ C:\Users\farik\EkementaryTasks\NumericalSequence\bin\Debug\AdditionalClasses.dll
 C:\Users\farik\EkementaryTasks\NumericalSequence\bin\Debug\Interfaces.dll
 C:\Users\farik\EkementaryTasks\NumericalSequence\bin\Debug\AdditionalClasses.pdb
 C:\Users\farik\EkementaryTasks\NumericalSequence\bin\Debug\Interfaces.pdb
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\NumericalSequence\bin\Debug\AdditionalClasses.dll
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\NumericalSequence\bin\Debug\Interfaces.dll
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\NumericalSequence\bin\Debug\AdditionalClasses.pdb
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\NumericalSequence\bin\Debug\Interfaces.pdb

@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AdditionalClasses;
 using Interfaces;
 
@@ -11,17 +7,20 @@ namespace NumericalSequence
 {
     class NumericalSequenseApp
     {
-        #region fields
+        #region privatfields
 
-        public string input { get; set; }
+        private IStringParser _parser = new Parser();
 
-        private IStringParser parser = new Parser();
+        private Counter _counter = new Counter();
 
-        private Counter counter = new Counter();
-
-        private IStringValidator stringValidator = new Validator();
+        private IStringValidator _stringValidator = new Validator();
 
         private IUserCommunication _userCommunication;
+
+        #endregion
+
+        #region public fields
+        public string input { get; set; }
 
         public const string instructions =
            "Then the program will return the sequence of natural numbers whose square is less than a given number.";
@@ -30,8 +29,8 @@ namespace NumericalSequence
 
         public const string remark = "For correct operation, enter an integer natural number.";
 
-
         #endregion
+
 
         #region properties
 
@@ -52,21 +51,23 @@ namespace NumericalSequence
 
         #endregion
 
+        #region ctors
         public NumericalSequenseApp(IUserCommunication communication)
         {
             userCommunication = communication;
         }
 
+        #endregion
         public void AppStart()
         {
             string s = _userCommunication.GetUserInput(startMessage);
 
-            if (validate(s))
+            if (_stringValidator.IsValid(s))
             {
 
                 bool isDigitsFound;
 
-                s = parser.ExtractDigits(s, out isDigitsFound);
+                s = _parser.ExtractDigits(s, out isDigitsFound);
 
                 _userCommunication.Message("Passed number: ");
 
@@ -80,7 +81,7 @@ namespace NumericalSequence
 
                 input = s;
 
-                rangedNumericalSequence = counter.GetSequence(input);
+                rangedNumericalSequence = _counter.GetSequence(input);
 
                 _userCommunication.Message("Sequense of natural numbers whose square is less than a specified number: ");
                 _userCommunication.Print(rangedNumericalSequence);
@@ -97,24 +98,6 @@ namespace NumericalSequence
 
             Environment.Exit(0);
         }
-
-        private bool validate(string s)
-        {
-            if (stringValidator.IsValid(s, validCheks.stringIsEmpty))
-            {
-                _userCommunication.Message(StringsConstants.empty);
-                return false;
-            }
-
-            if (stringValidator.IsValid(s, validCheks.stringHasWhitheSpaces))
-            {
-                _userCommunication.Message(StringsConstants.whiteSpace);
-                return false;
-            }
-
-            return true;
-        }
-
         public void printInstructions()
         {
             _userCommunication.Message(remark);
@@ -122,5 +105,4 @@ namespace NumericalSequence
             _userCommunication.Message(instructions);
         }
     }
-
 }

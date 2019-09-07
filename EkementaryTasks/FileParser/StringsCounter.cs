@@ -14,7 +14,7 @@ namespace FileParser
 
         public readonly string Entry;
 
-
+        
         public StringsCounter(string path, string entry) : base(path)
         {
             Entry = entry.ToLowerInvariant();

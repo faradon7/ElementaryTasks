@@ -5,27 +5,22 @@ namespace AdditionalClasses
 {
     public class Validator : IStringValidator, INumberValidator
     {
-        public bool IsValid(string s, validCheks check)
+        public bool IsValid(string s)
         {
-            switch (check)
+            int i = 0;
+            if (string.IsNullOrEmpty(s))
             {
-                case validCheks.stringIsEmpty:
-                    {
-                        return string.IsNullOrEmpty(s);
-
-                    }
-                case validCheks.stringHasWhitheSpaces:
-                    {
-                        return string.IsNullOrWhiteSpace(s);
-                    }
-                case validCheks.isNumber:
-                    {
-                        int i;
-
-                        return (Int32.TryParse(s, out i));
-                    }
-                default: return false;
+                return false;
             }
+            if (string.IsNullOrWhiteSpace(s))
+            {
+                return false;
+            }
+            if (!Int32.TryParse(s, out i))
+            {
+                return false;
+            }
+            return true;
         }
 
         public bool IsValidNumbers(double[] range)

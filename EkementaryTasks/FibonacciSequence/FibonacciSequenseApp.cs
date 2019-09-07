@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using AdditionalClasses;
 using Interfaces;
 
@@ -13,12 +10,12 @@ namespace FibonacciSequence
     {
         #region fields
 
-        public double from { get; set; }
-        public double to { get; set; }
+        public double From { get; set; }
+        public double To { get; set; }
 
         private INumberParser _parser = new Parser();
 
-        private Counter _counter = new Counter();
+        private SequenceGenerator _sequenceGenerator = new SequenceGenerator();
 
         private IStringValidator _stringValidator = new Validator();
 
@@ -68,7 +65,7 @@ namespace FibonacciSequence
 
             double[] range = new double[2]; 
 
-            if (validate(args[0]) & validate(args[1]))
+            if (_stringValidator.IsValid(args[0]) & _stringValidator.IsValid(args[1]))
             {
                 bool hasDigits;
 
@@ -82,10 +79,10 @@ namespace FibonacciSequence
                 if (hasDigits & _numberValidator.IsValidNumbers(range))
                 {
 
-                    from = range[0];
-                    to = range[1];
+                    From = range[0];
+                    To = range[1];
 
-                    rangedFibonacciSequence = _counter.GetSequence(from, to);
+                    rangedFibonacciSequence = _sequenceGenerator.GetSequence(From, To);
 
                     _userCommunication.Message("Fibonacci sequense in specified range: ");
                     _userCommunication.Print(rangedFibonacciSequence);
@@ -113,22 +110,6 @@ namespace FibonacciSequence
 
         }
 
-        private bool validate(string s)
-        {
-            if (_stringValidator.IsValid(s, validCheks.stringIsEmpty))
-            {
-                _userCommunication.Warning(StringsConstants.empty);
-                return false;
-            }
-
-            if (_stringValidator.IsValid(s, validCheks.stringHasWhitheSpaces))
-            {
-                _userCommunication.Warning(StringsConstants.whiteSpace);
-                return false;
-            }
-
-            return true;
-        }
 
         public void printInstructions()
         {

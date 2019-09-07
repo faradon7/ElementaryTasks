@@ -6,14 +6,8 @@ using System.Threading.Tasks;
 
 namespace Interfaces
 {
-    public enum validCheks
-    {
-        stringIsEmpty,
-        stringHasWhitheSpaces,
-        isNumber
-    }
     public interface IStringValidator
     {
-        bool IsValid(string s, validCheks check);
+        bool IsValid(string s);
     }
 }

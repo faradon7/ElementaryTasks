@@ -76,7 +76,7 @@ namespace FileParser
                     Writer.Write(tempLine);
 
                     yield return Regex.Split(tempLine, @"\W+")
-                                    .Where(x => x == Substitute).Count(); ;
+                                    .Where(x => x == Substitute).Count();
                 }
             }
             finally

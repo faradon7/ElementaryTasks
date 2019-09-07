@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FibonacciSequenseApp.cs" />
-    <Compile Include="Counter.cs" />
+    <Compile Include="SequenceGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
