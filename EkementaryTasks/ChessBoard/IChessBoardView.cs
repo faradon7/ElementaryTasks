@@ -8,16 +8,18 @@ namespace ChessBoard
 {
     interface IChessBoardView
     {
-        void PrintCell(Cell cell);
+        void PrintBoard(IBoard board);
 
         string[] GetUserInput(string[] startMessage);
 
-        //void PrintInstructions(StringBuilder sb);
+        string GetUserInput(string startMessage);
 
-        //void Warning(string message);
+        void PrintInstructions(StringBuilder sb);
 
-        //void Message(string message);
+        void Warning(string message);
 
-        //bool WantContinue();
+        void Message(string message);
+
+        bool WantContinue();
     }
 }

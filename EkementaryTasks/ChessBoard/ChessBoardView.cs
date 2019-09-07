@@ -3,11 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AdditionalClasses;
 
 namespace ChessBoard
 {
     class ChessBoardView : IChessBoardView
     {
+        public void PrintInstructions(StringBuilder sb)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(sb);
+            Console.ResetColor();
+        }
+
+        public void Message(string message)
+        {
+            Console.Write(message);
+        }
+
+        public void Warning(string message)
+        {
+            Console.Beep();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(message);
+
+            Console.ResetColor();
+        }
+
         public string[] GetUserInput(string[] start)
         {
             string[] userInput = new string[start.Length];
@@ -22,26 +44,45 @@ namespace ChessBoard
             return userInput;
         }
 
-        public void PrintCell(Cell cell)
+        public string GetUserInput(string start)
         {
+            string userInput;
 
-            int MoveCoursor = cell.x_position;
-            int LiftCoursor = cell.y_position;
+            Console.Write(start);
 
-            Console.SetCursorPosition(MoveCoursor, LiftCoursor);
+            userInput = Console.ReadLine();
 
-            for (int i = 0; i < Cell.Size; i++)
+            return userInput;
+        }
+
+        public void PrintBoard(IBoard board)
+        {
+            Console.Clear();
+
+            foreach (var cell in board.Cells)
             {
-                Console.Write(cell);
+                int MoveCoursor = cell.x_position;
 
-                while (!(i == Cell.Size - 1))
+                int LiftCoursor = cell.y_position;
+
+                Console.SetCursorPosition(cell.x_position, cell.y_position);
+
+                for (int i = 0; i < Cell.Size; i++)
                 {
-                    //MoveCoursor += cell.CellLength.Length;
-                    //LiftCoursor = NextRow;
-                    //Console.SetCursorPosition(MoveCoursor, LiftCoursor);
-                    Console.SetCursorPosition(MoveCoursor, ++LiftCoursor);
+                        Console.Write(cell.Fill);
+                        Console.SetCursorPosition(MoveCoursor, ++LiftCoursor);
                 }
             }
+        }
+
+        public bool WantContinue()
+        {
+            Console.WriteLine();
+
+            string resp = GetUserInput(StringsConstants.wantContinue).ToUpper();
+
+            return (resp == "YES" | resp == "Y");
+
         }
     }
 }
