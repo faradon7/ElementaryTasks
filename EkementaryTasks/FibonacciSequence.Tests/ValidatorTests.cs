@@ -12,25 +12,25 @@ namespace FibonacciSequence.Tests
     [TestFixture]
     public class ValidatorTests
     {
-        public Validator validator;
+        private Validator _validator;
 
         [SetUp]
         public void ValidatorTestsSetUp()
         {
-            validator = new Validator();
+            _validator = new Validator();
         }
 
         [Test]
         public void CheckEmptyString()
         {
-            var result = validator.IsValid("", validCheks.stringIsEmpty);
+            var result = _validator.IsValid("", validCheks.stringIsEmpty);
             Assert.IsTrue(result, "The result of this cool test was not true");
         }
 
         [Test]
         public void CheckIsValidNumber()
         {
-            var result = validator.IsValid("3453", validCheks.isNumber);
+            var result = _validator.IsValid("3453", validCheks.isNumber);
             Assert.IsTrue(result, "The result of this cool test was not true");
         }
     }
