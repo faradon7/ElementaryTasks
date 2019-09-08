@@ -12,7 +12,7 @@ namespace FileParser
     {
         public override string Entry { get; }
 
-
+        
         public StringsCounter(string path, string entry) : base(path)
         {
             Entry = entry.ToLowerInvariant();
