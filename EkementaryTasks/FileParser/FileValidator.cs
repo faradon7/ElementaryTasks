@@ -24,25 +24,25 @@ namespace FileParser
             return new FileInfo(path).Extension == ".txt";
         }
 
-        public bool validateAll(string path, out string[] possibleErrors)
+        public bool validateAll(string path, out IList<string> possibleErrors)
         {
-            possibleErrors = new string[3];
+            possibleErrors = new List<string>();
 
             if (!isFileExist(path))
             {
-                possibleErrors[0] = "File does'not exist!!!";
+                possibleErrors.Add("File does'not exist!!!");
                 return false;
             }
 
             if (isNotFileEmpty(path))
             {
-                possibleErrors[1] = "File is empty!!!";
+                possibleErrors.Add("File is empty!!!");
                 return false;
             }
 
             if (!isFileTxt(path))
             {
-                possibleErrors[2] = "File isn't have .txt extension!!!";
+                possibleErrors.Add("File isn't have .txt extension!!!");
                 return false;
             }
 

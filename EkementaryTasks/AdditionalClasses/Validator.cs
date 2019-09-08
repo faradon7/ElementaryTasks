@@ -12,9 +12,8 @@ namespace AdditionalClasses
                 case validCheks.stringIsEmpty:
                     {
                         return string.IsNullOrEmpty(s);
-
                     }
-                case validCheks.stringHasWhitheSpaces:
+                case validCheks.stringHasWhiteSpaces:
                     {
                         return string.IsNullOrWhiteSpace(s);
                     }

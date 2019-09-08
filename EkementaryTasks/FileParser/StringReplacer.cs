@@ -4,21 +4,20 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 
-namespace FileParser
+namespace FileParser 
 {
     class StringReplacer : TextHandler
     {
         public readonly string Substitute;
 
-        private StreamReader Reader { get; set; }
-
-        private StreamWriter Writer { get; set; }
-
         private string FileName { get; set; }
 
-        public readonly string Entry;
+        public override string Entry { get; }
+
+        private Regex _regex { get; set; }
 
         public StringReplacer(string path, string entry, string substitute) : base(path)
         {
@@ -27,63 +26,45 @@ namespace FileParser
             Entry = entry;
 
             Substitute = substitute;
+
+            _regex = new Regex($"\b?({Entry})\b?");
         }
 
-        public int Replace()
+        public void Replace()
         {
-            Stream stream = File.OpenRead(FilePath);
 
-            Reader = new StreamReader(stream, DefaultEncoding, true, DefaultBufferSize);
+            string NextLine;
 
-            string tempFile = Path.ChangeExtension(Path.GetTempFileName(), "txt");
+            long streamLength;
 
-            string backUp = Path.ChangeExtension(Path.GetTempFileName(), "txt");
+            long nextLinePosition = 0L;
 
-
-            Writer = new StreamWriter(tempFile, true, DefaultEncoding, DefaultBufferSize);
-
-            foreach (var item in this)
+            do
             {
-                Amount += item;
-            }
-
-            File.Replace(tempFile, FilePath, backUp);
-
-            return Amount;
-        }
-
-        public override IEnumerator<int> GetEnumerator()
-        {
-            return GetEnumeratorImpl(Reader);
-        }
-
-        protected IEnumerator<int> GetEnumeratorImpl(StreamReader stream)
-        {
-            var regex = new Regex($"\b?({Entry})\b?");
-            
-
-            try
-            {
-
-                string tempLine;
-
-                while (!stream.EndOfStream)
+                using (var sr = _reader.GetReader())
                 {
-                    tempLine = stream.ReadLine();
+                    streamLength = _reader.Length;
 
-                    tempLine = regex.Replace(tempLine, Substitute);
+                    sr.BaseStream.Position = nextLinePosition;
 
-                    Writer.Write(tempLine);
+                    NextLine = sr.ReadLine();
 
-                    yield return Regex.Split(tempLine, @"\W+")
-                                    .Where(x => x == Substitute).Count(); ;
+                    nextLinePosition += Encoding.UTF8.GetByteCount(NextLine) + 2;
                 }
-            }
-            finally
-            {
-                stream.Dispose();
-                Writer.Dispose();
-            }
+
+                NextLine = _regex.Replace(NextLine, Substitute);
+
+                using (var sw = _writer.GetWriter())
+                {
+                    sw.WriteLine(NextLine);
+                }
+
+                Amount += Regex.Split(NextLine, @"\W+")
+                                        .Where(x => x == Substitute).Count();
+
+            } while (nextLinePosition < streamLength);
+
+            _writer.ReplaceWithTempFile();
         }
     }
 }

@@ -106,7 +106,7 @@ namespace NumericalSequence
                 return false;
             }
 
-            if (stringValidator.IsValid(s, validCheks.stringHasWhitheSpaces))
+            if (stringValidator.IsValid(s, validCheks.stringHasWhiteSpaces))
             {
                 _userCommunication.Message(StringsConstants.whiteSpace);
                 return false;

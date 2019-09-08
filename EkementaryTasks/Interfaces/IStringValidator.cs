@@ -9,7 +9,7 @@ namespace Interfaces
     public enum validCheks
     {
         stringIsEmpty,
-        stringHasWhitheSpaces,
+        stringHasWhiteSpaces,
         isNumber
     }
     public interface IStringValidator

@@ -8,34 +8,49 @@ using System.Threading.Tasks;
 
 namespace FileParser
 {
-    abstract class TextHandler : IEnumerable<int>
+    abstract class TextHandler 
     {
-        protected const int DefaultBufferSize = 10240;
-
-        public Encoding DefaultEncoding { get; set; } = Encoding.UTF8;
-
-        public readonly string FilePath;
+        public abstract string Entry { get; }
 
         public int Amount { get; protected set; }
 
-        //protected StreamReader Stream;
+        protected ReadStreamProvider _reader;
 
-
+        protected WriteStreamProvider _writer;
 
         public TextHandler(string path)
         {
-            FilePath = path;
+            _reader = new ReadStreamProvider(path);
+
+            _writer = new WriteStreamProvider(path);
         }
 
+       
+        //{
+        //    string NextLine;
 
-        public abstract IEnumerator<int> GetEnumerator();
+        //    long streamLength;
 
+        //    long nextLinePosition = 0L;
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
+        //    do
+        //    {
+        //        using (var sr = _reader.GetReader())
+        //        {
+        //            streamLength = _reader.Length;
 
-        
+        //            sr.BaseStream.Position = nextLinePosition;
+
+        //            NextLine = sr.ReadLine();
+
+        //            nextLinePosition += Encoding.UTF8.GetByteCount(NextLine) + 2;
+        //        }
+
+        //        yield return NextLine;
+
+        //    } while (nextLinePosition < streamLength);
+        //}
+
     }
 }
+

@@ -48,10 +48,12 @@
     <Compile Include="IFileValidator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadStreamProvider.cs" />
     <Compile Include="StringReplacer.cs" />
     <Compile Include="StringsCounter.cs" />
     <Compile Include="Test.cs" />
     <Compile Include="TextHandler.cs" />
+    <Compile Include="WriteStreamProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

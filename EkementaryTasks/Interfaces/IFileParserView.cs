@@ -18,6 +18,8 @@ namespace Interfaces
 
         void Warning(string message);
 
+        void PrintInstructions(StringBuilder sb);
+
         bool WantContinue();
     }
 }

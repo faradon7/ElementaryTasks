@@ -62,11 +62,13 @@ namespace FibonacciSequence
         {
             userCommunication.Message(StringsConstants.startMessage);
 
-            string[] start = new [] { "From what number to start the search for values: ", "To which number to look for values: " };
+            var start = new [] { "From what number to start the search for values: ", "To which number to look for values: " };
 
-            string[] args = _userCommunication.GetUserInput(start);
+            var args = _userCommunication.GetUserInput(start); //TODO: проверка на тип
 
-            double[] range = new double[2]; 
+            var range = new double[2]; 
+
+
 
             if (validate(args[0]) & validate(args[1]))
             {
@@ -121,7 +123,7 @@ namespace FibonacciSequence
                 return false;
             }
 
-            if (_stringValidator.IsValid(s, validCheks.stringHasWhitheSpaces))
+            if (_stringValidator.IsValid(s, validCheks.stringHasWhiteSpaces))
             {
                 _userCommunication.Warning(StringsConstants.whiteSpace);
                 return false;

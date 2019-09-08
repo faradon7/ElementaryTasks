@@ -8,8 +8,8 @@ namespace ChessBoard
 {
     class ChessBoard : IBoard
     {
-        private int MoveCoursor = 0;
-        private int LiftCoursor = 0;
+        //private int MoveCoursor = 0;
+        //private int LiftCoursor = 0;
         private IChessBoardView _userCommunication;
 
         public int Rows { get; set; }

@@ -10,9 +10,7 @@ namespace FileParser
 {
     class StringsCounter : TextHandler
     {
-        public StreamReader Reader { get; set; }
-
-        public readonly string Entry;
+        public override string Entry { get; }
 
 
         public StringsCounter(string path, string entry) : base(path)
@@ -20,47 +18,59 @@ namespace FileParser
             Entry = entry.ToLowerInvariant();
         }
 
-        public int Count()
+        public void Count()
         {
-            Stream stream = File.OpenRead(@"C:\Users\farik\EkementaryTasks\Biblija.txt");
+            string NextLine;
 
-            Reader = new StreamReader(stream, DefaultEncoding, true, DefaultBufferSize);
+            long streamLength;
 
-            Amount = 0;
+            long nextLinePosition = 0L;
 
-            foreach (var item in this)
+            do
             {
-                Amount += item;
-            }
-            return Amount;
-        }
-
-        public override IEnumerator<int> GetEnumerator()
-        {
-            return GetEnumeratorImpl(Reader);
-        }
-
-        public IEnumerator<int> GetEnumeratorImpl(StreamReader stream)
-        {
-            string tempLine;
-
-            int amount = 0;
-            try
-            {
-                while (!stream.EndOfStream)
+                using (var sr = _reader.GetReader())
                 {
-                    tempLine = stream.ReadLine();
+                    streamLength = _reader.Length;
 
-                    amount = Regex.Split(tempLine, @"\W+")
+                    sr.BaseStream.Position = nextLinePosition;
+
+                    NextLine = sr.ReadLine();
+
+                    nextLinePosition += Encoding.UTF8.GetByteCount(NextLine) + 2;
+                }
+
+                Amount += Regex.Split(NextLine, @"\W+")
                                     .Where(x => x.ToLowerInvariant() == Entry).Count();
 
-                    yield return amount;
-                }
-            }
-            finally
-            {
-                stream.Dispose();
-            }
+            } while (nextLinePosition < streamLength);
         }
+
+        //public override IEnumerator<int> GetEnumerator()
+        //{
+        //    return GetEnumeratorImpl(Reader);
+        //}
+
+        //public IEnumerator<int> GetEnumeratorImpl(StreamReader stream)
+        //{
+        //    string tempLine;
+
+        //    int amount = 0;
+        //    try
+        //    {
+        //        while (!stream.EndOfStream)
+        //        {
+        //            tempLine = stream.ReadLine();
+
+        //            amount = Regex.Split(tempLine, @"\W+")
+        //                            .Where(x => x.ToLowerInvariant() == Entry).Count();
+
+        //            yield return amount;
+        //        }
+        //    }
+        //    finally
+        //    {
+        //        stream.Dispose();
+        //    }
+        //}
     }
 }
