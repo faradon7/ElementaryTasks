@@ -29,3 +29,7 @@ C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\F
 C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\bin\Debug\Interfaces.dll
 C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\bin\Debug\AdditionalClasses.pdb
 C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\bin\Debug\Interfaces.pdb
+I:\IT-FRIENDS - Github\ElementaryTasks\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.csprojAssemblyReference.cache
+I:\IT-FRIENDS - Github\ElementaryTasks\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.csproj.CoreCompileInputs.cache
+I:\IT-FRIENDS - Github\ElementaryTasks\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.exe
+I:\IT-FRIENDS - Github\ElementaryTasks\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.pdb
