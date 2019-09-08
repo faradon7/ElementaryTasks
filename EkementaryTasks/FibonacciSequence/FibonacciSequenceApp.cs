@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AdditionalClasses;
+using Helpers;
 using Interfaces;
 
 namespace FibonacciSequence
 {
-    class FibonacciSequenseApp
+    class FibonacciSequenceApp
     {
         #region fields
 
@@ -18,7 +18,7 @@ namespace FibonacciSequence
 
         private INumberParser _parser = new Parser();
 
-        private Counter _counter = new Counter();
+        private SequenceGenerator _generator = new SequenceGenerator();
 
         private IStringValidator _stringValidator = new Validator();
 
@@ -51,7 +51,7 @@ namespace FibonacciSequence
 
         #region ctors
 
-        public FibonacciSequenseApp(IUserCommunication communication)
+        public FibonacciSequenceApp(IUserCommunication communication)
         {
             userCommunication = communication;
         }
@@ -87,7 +87,7 @@ namespace FibonacciSequence
                     from = range[0];
                     to = range[1];
 
-                    rangedFibonacciSequence = _counter.GetSequence(from, to);
+                    rangedFibonacciSequence = _generator.GetSequence(from, to);
 
                     _userCommunication.Message("Fibonacci sequense in specified range: ");
                     _userCommunication.Print(rangedFibonacciSequence);

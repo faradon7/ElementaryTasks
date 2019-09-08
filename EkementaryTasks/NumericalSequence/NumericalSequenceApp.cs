@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AdditionalClasses;
+using Helpers;
 using Interfaces;
 
 namespace NumericalSequence
 {
-    class NumericalSequenseApp
+    class NumericalSequenceApp
     {
         #region fields
 
@@ -17,7 +17,7 @@ namespace NumericalSequence
 
         private IStringParser parser = new Parser();
 
-        private Counter counter = new Counter();
+        private NaturalSequenceGenerator counter = new NaturalSequenceGenerator();
 
         private IStringValidator stringValidator = new Validator();
 
@@ -52,7 +52,7 @@ namespace NumericalSequence
 
         #endregion
 
-        public NumericalSequenseApp(IUserCommunication communication)
+        public NumericalSequenceApp(IUserCommunication communication)
         {
             userCommunication = communication;
         }

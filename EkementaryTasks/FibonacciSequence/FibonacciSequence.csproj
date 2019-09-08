@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FibonacciSequenseApp.cs" />
-    <Compile Include="Counter.cs" />
+    <Compile Include="FibonacciSequenceApp.cs" />
+    <Compile Include="SequenceGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -52,9 +52,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AdditionalClasses\AdditionalClasses.csproj">
+    <ProjectReference Include="..\AdditionalClasses\Helpers.csproj">
       <Project>{33fec376-5716-40a7-b0ff-7c577c468a87}</Project>
-      <Name>AdditionalClasses</Name>
+      <Name>Helpers</Name>
     </ProjectReference>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{78b6d4f2-3aa6-40dd-99e4-d2289fc6e05c}</Project>

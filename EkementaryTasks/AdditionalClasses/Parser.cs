@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using Interfaces;
 
-namespace AdditionalClasses
+namespace Helpers
 {
     public class Parser : IStringParser, INumberParser
     {
@@ -54,7 +54,7 @@ namespace AdditionalClasses
 
                 foreach (Match match in matches)
                 {
-                    mathcString = match.Value;
+                    mathcString += match.Value;
                 }
                     bool result = double.TryParse(mathcString, out rangeArg);
 

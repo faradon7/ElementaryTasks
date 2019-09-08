@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using AdditionalClasses;
+using Helpers;
 using Interfaces;
 
 namespace FileParser
@@ -45,7 +45,7 @@ namespace FileParser
 
                             counter.Count();
 
-                            _userCommunication.Message($"Amount of replaced strings: {counter.Amount}");
+                            _userCommunication.Message($"Amount of entries: {counter.Amount}");
                         }
                         else
                         {

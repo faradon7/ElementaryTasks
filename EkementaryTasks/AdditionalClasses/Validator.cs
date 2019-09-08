@@ -1,7 +1,7 @@
 ﻿using System;
 using Interfaces;
 
-namespace AdditionalClasses
+namespace Helpers
 {
     public class Validator : IStringValidator, INumberValidator
     {

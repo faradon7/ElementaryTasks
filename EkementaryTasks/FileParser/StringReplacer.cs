@@ -43,11 +43,11 @@ namespace FileParser
             {
                 using (var sr = _reader.GetReader())
                 {
-                    streamLength = _reader.Length;
+                    streamLength = _reader.Length; 
 
                     sr.BaseStream.Position = nextLinePosition;
 
-                    NextLine = sr.ReadLine();
+                    NextLine = sr.ReadLine(); // reading from file 
 
                     nextLinePosition += Encoding.UTF8.GetByteCount(NextLine) + 2;
                 }
@@ -56,7 +56,7 @@ namespace FileParser
 
                 using (var sw = _writer.GetWriter())
                 {
-                    sw.WriteLine(NextLine);
+                    sw.WriteLine(NextLine); // writing to file
                 }
 
                 Amount += Regex.Split(NextLine, @"\W+")

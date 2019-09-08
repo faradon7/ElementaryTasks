@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AdditionalClasses;
+using Helpers;
 
 namespace NumericalSequence
 {
     class Program
     {
 
-        public static NumericalSequenseApp NumericalSequence { get; } = new NumericalSequenseApp(new ConsoleUI());
+        public static NumericalSequenceApp NumericalSequence { get; } = new NumericalSequenceApp(new ConsoleUI());
 
 
         static void Main(string[] args)

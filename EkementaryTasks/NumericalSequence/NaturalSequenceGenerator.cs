@@ -6,7 +6,7 @@ using System.Collections;
 
 namespace NumericalSequence
 {
-    public class Counter : IEnumerable
+    public class NaturalSequenceGenerator : IEnumerable
     {
         //private List<double> repo = new List<double>();
 
@@ -16,7 +16,7 @@ namespace NumericalSequence
 
         public string Row { get; set; }
 
-        public Counter()
+        public NaturalSequenceGenerator()
         {
 
         }

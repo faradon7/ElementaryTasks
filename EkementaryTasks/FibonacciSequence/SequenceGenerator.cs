@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using AdditionalClasses;
+using Helpers;
 using Interfaces;
 
 namespace FibonacciSequence
 {
-    class Counter : IEnumerable
+    class SequenceGenerator : IEnumerable
     {
         #region fields
 
@@ -28,7 +28,7 @@ namespace FibonacciSequence
 
         #region ctors
 
-        public Counter()
+        public SequenceGenerator()
         {
             ln5d2 = ln5d2 = Math.Log(5) / 2;
 
