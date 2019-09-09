@@ -31,9 +31,7 @@ namespace FibonacciSequence
         public double GetByPositionNumber(double k)
         {
             return Math.Round(Math.Exp(k * lnFi - ln5d2));
-
         }
-
 
         public IEnumerable GetSequence(double start, double end)
         {
@@ -53,16 +51,15 @@ namespace FibonacciSequence
         {
             // Finding the nearest bigger Fibonacci number bye the Binet's formula
 
-            double nearest;
-
             k = Math.Round((ln5d2 + Math.Log(n)) / lnFi);   // number of Fibonacci sequence member
 
-            nearest = Math.Round(Math.Exp(k * lnFi - ln5d2)); // nearest bigger Fibonacci number
+            double nearest = Math.Round(Math.Exp(k * lnFi - ln5d2)); // nearest bigger Fibonacci number
 
             if (nearest < n) //if the nearest number less than required
             {
                 nearest = GetByPositionNumber(k + 1); // return next number of Fibonacci sequence
             }
+
             return nearest;
         }
 

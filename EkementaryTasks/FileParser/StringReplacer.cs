@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace FileParser 
+namespace FileParser
 {
     class StringReplacer : TextHandler
     {
@@ -19,7 +19,8 @@ namespace FileParser
 
         private Regex _regex { get; set; }
 
-        public StringReplacer(string path, string entry, string substitute) : base(path)
+        public StringReplacer(string path, string entry, string substitute)
+            : base(path)
         {
             FileName = Path.GetFileNameWithoutExtension(path);
 
@@ -32,36 +33,33 @@ namespace FileParser
 
         public void Replace()
         {
-
-            string NextLine;
-
             long streamLength;
-
             long nextLinePosition = 0L;
 
             do
             {
+                string nextLine;
+
                 using (var sr = _reader.GetReader())
                 {
-                    streamLength = _reader.Length; 
+                    streamLength = _reader.Length;
 
                     sr.BaseStream.Position = nextLinePosition;
 
-                    NextLine = sr.ReadLine(); // reading from file 
+                    nextLine = sr.ReadLine();   // reading from file 
 
-                    nextLinePosition += Encoding.UTF8.GetByteCount(NextLine) + 2;
+                    nextLinePosition += Encoding.UTF8.GetByteCount(nextLine) + 2;
                 }
 
-                NextLine = _regex.Replace(NextLine, Substitute);
+                nextLine = _regex.Replace(nextLine, Substitute);
 
                 using (var sw = _writer.GetWriter())
                 {
-                    sw.WriteLine(NextLine); // writing to file
+                    sw.WriteLine(nextLine); // writing to file
                 }
 
-                Amount += Regex.Split(NextLine, @"\W+")
-                                        .Where(x => x == Substitute).Count();
-
+                Amount += Regex.Split(nextLine, @"\W+")
+                        .Where(x => x == Substitute).Count();
             } while (nextLinePosition < streamLength);
 
             _writer.ReplaceWithTempFile();

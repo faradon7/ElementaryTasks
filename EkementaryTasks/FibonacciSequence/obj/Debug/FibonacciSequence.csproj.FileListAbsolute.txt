@@ -29,3 +29,5 @@ C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\F
 C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\bin\Debug\Interfaces.dll
 C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\bin\Debug\AdditionalClasses.pdb
 C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\bin\Debug\Interfaces.pdb
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\bin\Debug\NLog.dll
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\bin\Debug\NLog.xml

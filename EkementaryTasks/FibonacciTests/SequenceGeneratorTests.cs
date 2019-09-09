@@ -15,9 +15,9 @@ namespace FibonacciSequence.Tests
 
             SequenceGenerator Generator = new SequenceGenerator();
 
-            double from = 7D;
+            double from = 7.0;
 
-            double to = 144;
+            double to = 144.0;
 
             //Act
 
@@ -39,7 +39,7 @@ namespace FibonacciSequence.Tests
 
             double to = 144;
 
-            string expected = "8, 13, 21, 34, 55, 89, 144, ";
+            string expected = "8, 13, 21, 34, 55, 89, 144";
 
             //Act
 
