@@ -14,6 +14,6 @@ namespace FileParser
 
         bool isNotFileEmpty(string path);
 
-        bool validateAll(string path, out string[] possibleErrors);
+        bool validateAll(string path, out IList<string> possibleErrors);
     }
 }

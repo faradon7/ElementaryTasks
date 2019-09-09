@@ -3,7 +3,7 @@ using System.Collections;
 using System.Text;
 using Interfaces;
 
-namespace AdditionalClasses
+namespace Helpers
 {
     public enum MessageType
     {

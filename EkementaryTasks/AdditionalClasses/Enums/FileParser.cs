@@ -1,4 +1,4 @@
-﻿namespace AdditionalClasses{
+﻿namespace Helpers{
 
     public enum UserResponse
     {

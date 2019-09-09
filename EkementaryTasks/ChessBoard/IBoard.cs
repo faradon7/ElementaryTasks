@@ -14,7 +14,7 @@ namespace ChessBoard
 
         Cell[,] Cells { get; set; }
 
-        void GetBoard(int sizeOfCell = 6);
+        Cell[,] GetBoard(int sizeOfCell = 6);
 
     }
 }

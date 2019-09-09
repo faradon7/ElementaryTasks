@@ -9,11 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FibonacciSequence", "Fibona
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileParser", "FileParser\FileParser.csproj", "{04E3F08E-2DF3-4284-B86C-046B060D5FA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdditionalClasses", "AdditionalClasses\AdditionalClasses.csproj", "{33FEC376-5716-40A7-B0FF-7C577C468A87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "AdditionalClasses\Helpers.csproj", "{33FEC376-5716-40A7-B0FF-7C577C468A87}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{78B6D4F2-3AA6-40DD-99E4-D2289FC6E05C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessBoard", "ChessBoard\ChessBoard.csproj", "{FB26252E-1D63-4BD0-81A5-8A421634F78B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FibonacciSequence.Tests", "FibonacciTests\FibonacciSequence.Tests.csproj", "{9E0743B0-7626-4719-A169-231D515D1581}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{FB26252E-1D63-4BD0-81A5-8A421634F78B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB26252E-1D63-4BD0-81A5-8A421634F78B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB26252E-1D63-4BD0-81A5-8A421634F78B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E0743B0-7626-4719-A169-231D515D1581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E0743B0-7626-4719-A169-231D515D1581}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E0743B0-7626-4719-A169-231D515D1581}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E0743B0-7626-4719-A169-231D515D1581}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

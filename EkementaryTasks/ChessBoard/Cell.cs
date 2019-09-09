@@ -22,12 +22,16 @@ namespace ChessBoard
 
         public int y_position = 0;
 
-        
-
-        public Cell(int size = 6)
+        public Cell(bool color, int size = 6)
         {
             Size = size;
             Length = Size * 2;
+            Color = color;
+        }
+
+        public void SetFigureThere()
+        {
+            Console.SetCursorPosition(x_position-Length/2, y_position-Size/2);
         }
 
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AdditionalClasses;
+using Helpers;
 using Interfaces;
 
 namespace ChessBoard
@@ -25,31 +25,38 @@ namespace ChessBoard
 
         public void ApStart()
         {
-            int rows;
+            bool wantToContinue = false;
+            do
+            {
+                int rows;
 
-            int columns;
+                int columns;
 
-            bool isExtracted = false;
+                bool isExtracted = false;
 
-            string[] arqs;
+                string[] arqs;
 
-            double[] boardOptions;
+                double[] boardOptions;
 
-            arqs = _userCommunication.GetUserInput(new[] { "Enter amount of board rows: ", "Enter amount of board rows: " });
+                arqs = _userCommunication.GetUserInput(new[] { "Enter amount of board rows: ", "Enter amount of board columns: " });
 
-            boardOptions = _parser.ExtractDigits(arqs, out isExtracted);
+                boardOptions = _parser.ExtractDigits(arqs, out isExtracted);
 
-            _validator.IsValidNumbers(boardOptions);
+                _validator.IsValidNumbers(boardOptions);
 
-            rows = (int)boardOptions[0];
+                rows = (int)boardOptions[0];
 
-            columns = (int)boardOptions[1];
+                columns = (int)boardOptions[1];
 
-            ChessBoard = new ChessBoard(rows, columns);
+                ChessBoard = new ChessBoard(rows, columns, _userCommunication);
 
-            ChessBoard.GetBoard();
+                _userCommunication.PrintBoard(ChessBoard);
 
+                wantToContinue =  _userCommunication.WantContinue();
 
+            } while (wantToContinue);
+
+            Environment.Exit(0);
         }
 
     }
