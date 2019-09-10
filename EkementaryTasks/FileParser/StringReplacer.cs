@@ -13,9 +13,9 @@ namespace FileParser
     {
         private WriteStreamProvider _writer;
 
-        public readonly string Substitute;
-
         private string FileName { get; set; }
+
+        public readonly string Substitute;
 
         public override string Entry { get; }
 
@@ -33,27 +33,29 @@ namespace FileParser
 
         public void Replace()
         {
-            string currentLine = string.Empty;
-
+            var watch = System.Diagnostics.Stopwatch.StartNew();
             using (var sw = _writer.GetWriter())
-            using (var sr = _reader.GetReader())
             {
-                do
+                foreach (var line in _lineEnumeration)
                 {
-                    currentLine = sr.ReadLine();   // reading from file 
+                    string currentLine = string.Empty;
 
-                    if (currentLine.Contains(Entry))
+                    if (line.Contains(Entry))
                     {
-                        currentLine = currentLine.Replace(Entry, Substitute);
-
+                        currentLine = line.Replace(Entry, Substitute);
                         Amount += currentLine.Split(new string[] { Substitute }, StringSplitOptions.None).Length - 1;
-
+                    }
+                    else
+                    {
+                        sw.WriteLine(line);
+                        continue;
                     }
                     sw.WriteLine(currentLine); // writing to file
-
-                } while (!sr.EndOfStream);
+                }
             }
             _writer.ReplaceWithTempFile();
+            watch.Stop();
+            Console.WriteLine(watch.ElapsedMilliseconds);
         }
     }
 }

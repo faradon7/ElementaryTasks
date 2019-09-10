@@ -11,7 +11,6 @@ namespace FileParser
     class StringsCounter : TextHandler
     {
         public override string Entry { get; }
-
         
         public StringsCounter(string path, string entry) : base(path)
         {
@@ -20,57 +19,13 @@ namespace FileParser
 
         public void Count()
         {
-            string NextLine;
-
-            long streamLength;
-
-            long nextLinePosition = 0L;
-
-            do
-            {
-                using (var sr = _reader.GetReader())
+                foreach (var line in _lineEnumeration)
                 {
-                    streamLength = _reader.Length;
-
-                    sr.BaseStream.Position = nextLinePosition;
-
-                    NextLine = sr.ReadLine();
-
-                    nextLinePosition += Encoding.UTF8.GetByteCount(NextLine) + 2;
+                    if (line.Contains(Entry))
+                    {
+                        Amount += line.Split(new string[] { Entry}, StringSplitOptions.None).Length - 1;
+                    }
                 }
-
-                Amount += Regex.Split(NextLine, @"\W+")
-                                    .Where(x => x.ToLowerInvariant() == Entry).Count();
-
-            } while (nextLinePosition < streamLength);
         }
-
-        //public override IEnumerator<int> GetEnumerator()
-        //{
-        //    return GetEnumeratorImpl(Reader);
-        //}
-
-        //public IEnumerator<int> GetEnumeratorImpl(StreamReader stream)
-        //{
-        //    string tempLine;
-
-        //    int amount = 0;
-        //    try
-        //    {
-        //        while (!stream.EndOfStream)
-        //        {
-        //            tempLine = stream.ReadLine();
-
-        //            amount = Regex.Split(tempLine, @"\W+")
-        //                            .Where(x => x.ToLowerInvariant() == Entry).Count();
-
-        //            yield return amount;
-        //        }
-        //    }
-        //    finally
-        //    {
-        //        stream.Dispose();
-        //    }
-        //}
     }
 }

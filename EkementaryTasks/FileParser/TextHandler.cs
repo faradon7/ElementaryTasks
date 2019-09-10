@@ -10,43 +10,16 @@ namespace FileParser
 {
     abstract class TextHandler 
     {
+        protected LineEnumerator _lineEnumeration;
+
         public abstract string Entry { get; }
 
         public int Amount { get; protected set; }
 
-        protected ReadStreamProvider _reader;
-
         public TextHandler(string path)
         {
-            _reader = new ReadStreamProvider(path);
+            _lineEnumeration = new LineEnumerator(path);
         }
-
-       
-        //{
-        //    string NextLine;
-
-        //    long streamLength;
-
-        //    long nextLinePosition = 0L;
-
-        //    do
-        //    {
-        //        using (var sr = _reader.GetReader())
-        //        {
-        //            streamLength = _reader.Length;
-
-        //            sr.BaseStream.Position = nextLinePosition;
-
-        //            NextLine = sr.ReadLine();
-
-        //            nextLinePosition += Encoding.UTF8.GetByteCount(NextLine) + 2;
-        //        }
-
-        //        yield return NextLine;
-
-        //    } while (nextLinePosition < streamLength);
-        //}
-
     }
 }
 
