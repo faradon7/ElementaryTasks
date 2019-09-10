@@ -11,11 +11,11 @@ namespace NumericalSequence
     {
         #region privatfields
 
-        private IStringParser _parser = new Parser();
+        private IStringParser _parser;
 
         private IStringValidator _stringValidator;
 
-        private NaturalSequenceGenerator _generator = new NaturalSequenceGenerator();
+        private NaturalSequenceGenerator _generator;
 
         private IUserCommunication _userCommunication;
 
@@ -36,19 +36,21 @@ namespace NumericalSequence
 
         #region properties
 
-        public IEnumerable rangedNumericalSequence { get; private set; }
+        public IEnumerable RangedNumericalSequence { get; private set; }
 
         public IUserCommunication userCommunication
         {
             get { return _userCommunication; }
 
-            set {
-                    if (value == null)
-                    {
-                        throw new ArgumentNullException();
-                    }
+            set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException();
+                }
 
-                _userCommunication = value; }
+                _userCommunication = value;
+            }
         }
 
         #endregion
@@ -56,6 +58,9 @@ namespace NumericalSequence
         public NumericalSequenceApp(IUserCommunication communication)
         {
             userCommunication = communication;
+            _parser = new Parser();
+            _stringValidator = new Validator();
+            _generator = new NaturalSequenceGenerator();
         }
 
         public void AppStart()
@@ -80,10 +85,10 @@ namespace NumericalSequence
 
                 input = s;
 
-                rangedNumericalSequence = _generator.GetSequence(input);
+                RangedNumericalSequence = _generator.GetSequence(input);
 
                 _userCommunication.Message("Sequense of natural numbers whose square is less than a specified number: ");
-                _userCommunication.Print(rangedNumericalSequence);
+                _userCommunication.Message(string.Join(", ", RangedNumericalSequence));
             }
             else
             {
@@ -97,7 +102,7 @@ namespace NumericalSequence
 
             Environment.Exit(0);
         }
-      
+
         public void printInstructions()
         {
             _userCommunication.Message(remark);

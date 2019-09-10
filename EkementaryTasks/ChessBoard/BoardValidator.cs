@@ -9,7 +9,7 @@ namespace ChessBoard
 {
     class ChessBoardValidator : INumberValidator
     {
-        public bool IsValidNumbers(double[] boardOptions)
+        public bool IsValidNumbers(int[] boardOptions)
         {
             return !(boardOptions[0] > 8 | boardOptions[1] > 8);
         }

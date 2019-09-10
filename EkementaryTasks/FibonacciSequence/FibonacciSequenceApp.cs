@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Text;
 using Helpers;
 using Interfaces;
@@ -25,13 +26,13 @@ namespace FibonacciSequence
 
         #region properties
 
-        public double From { get; private set; }
+        public int From { get; private set; }
 
-        public double To { get; private set; }
+        public int To { get; private set; }
 
-        public IEnumerable rangedFibonacciSequence { get; private set; }
+        public IEnumerable<int> RangedFibonacciSequence { get; private set; }
 
-        public IUserCommunication userCommunication
+        public IUserCommunication UserCommunication
         {
             get { return _userCommunication; }
 
@@ -48,12 +49,9 @@ namespace FibonacciSequence
 
         #endregion
 
-        #region ctors
-
-
         public FibonacciSequenceApp(IUserCommunication communication)
         {
-            userCommunication = communication;
+            UserCommunication = communication;
 
             _parser = new Parser();
 
@@ -63,30 +61,25 @@ namespace FibonacciSequence
 
             _generator = new SequenceGenerator();
 
-        }
+            RangedFibonacciSequence = new List<int>();
 
-        #endregion
+        }
 
         public void AppStart()
         {
-            userCommunication.Message(StringsConstants.startMessage);
-
+            UserCommunication.Message(StringsConstants.startMessage);
 
             var start = new[] { "From what number to start the search for values: ", "To which number to look for values: " };
 
-
             var args = _userCommunication.GetUserInput(start); //TODO: проверка на тип
 
-
-            var range = new double[2];
-
+            var range = new int[2];
 
             if (_stringValidator.IsValid(args[0]) & _stringValidator.IsValid(args[1]))
             {
                 bool hasDigits;
 
                 range = _parser.ExtractDigits(args, out hasDigits);
-
 
                 _userCommunication.Message("Passed range ");
 
@@ -98,11 +91,16 @@ namespace FibonacciSequence
 
                     To = range[1];
 
-                    rangedFibonacciSequence = _generator.GetSequence(From, To);
+                    RangedFibonacciSequence = _generator.GetSequence(From, To);
 
                     _userCommunication.Message("Fibonacci sequense in specified range: ");
 
-                    _userCommunication.Print(rangedFibonacciSequence);
+                    _userCommunication.Message(string.Join(", ", RangedFibonacciSequence));
+
+                    if (_generator.biggerNearest == 0)
+                    {
+                        _userCommunication.Message("No number found in the given range of numbers");
+                    }
                 }
                 else
                 {
@@ -112,7 +110,6 @@ namespace FibonacciSequence
 
                     printInstructions();
                 }
-
             }
             else
             {

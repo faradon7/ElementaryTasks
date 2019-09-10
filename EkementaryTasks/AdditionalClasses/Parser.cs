@@ -31,9 +31,9 @@ namespace Helpers
                 return "No digits found";
             }
         }
-        public double[] ExtractDigits(string[] args, out bool isExtracted)
+        public int[] ExtractDigits(string[] args, out bool isExtracted)
         {
-            double[] parsedNumbers = new double[args.Length];
+            int[] parsedNumbers = new int[args.Length];
 
             isExtracted = true;
 
@@ -42,7 +42,7 @@ namespace Helpers
             for (int i = 0; i < args.Length; i++)
             {
                 string mathcString = string.Empty;
-                double rangeArg;
+                int rangeArg;
 
                 MatchCollection matches = regex.Matches(args[i]);
 
@@ -56,7 +56,7 @@ namespace Helpers
                 {
                     mathcString += match.Value;
                 }
-                    bool result = double.TryParse(mathcString, out rangeArg);
+                    bool result = int.TryParse(mathcString, out rangeArg);
 
                 parsedNumbers[i] = (rangeArg == 0) ? 1 : rangeArg;
             }

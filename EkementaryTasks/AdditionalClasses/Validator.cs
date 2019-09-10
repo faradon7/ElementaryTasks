@@ -29,7 +29,7 @@ namespace Helpers
 
 
 
-        public bool IsValidNumbers(double[] range)
+        public bool IsValidNumbers(int[] range)
         {
             return (range[0] < range[1]);
         }

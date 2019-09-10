@@ -36,7 +36,7 @@ namespace ChessBoard
 
                 string[] arqs;
 
-                double[] boardOptions;
+                int[] boardOptions;
 
                 arqs = _userCommunication.GetUserInput(new[] { "Enter amount of board rows: ", "Enter amount of board columns: " });
 

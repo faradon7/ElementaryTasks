@@ -11,57 +11,48 @@ namespace FileParser
 {
     class StringReplacer : TextHandler
     {
+        private WriteStreamProvider _writer;
+
         public readonly string Substitute;
 
         private string FileName { get; set; }
 
         public override string Entry { get; }
 
-        private Regex _regex { get; set; }
-
-        public StringReplacer(string path, string entry, string substitute)
-            : base(path)
+        public StringReplacer(string path, string entry, string substitute) :
+            base(path)
         {
+            _writer = new WriteStreamProvider(path);
+
             FileName = Path.GetFileNameWithoutExtension(path);
 
             Entry = entry;
 
             Substitute = substitute;
-
-            _regex = new Regex($"\b?({Entry})\b?");
         }
 
         public void Replace()
         {
-            long streamLength;
-            long nextLinePosition = 0L;
+            string currentLine = string.Empty;
 
-            do
+            using (var sw = _writer.GetWriter())
+            using (var sr = _reader.GetReader())
             {
-                string nextLine;
-
-                using (var sr = _reader.GetReader())
+                do
                 {
-                    streamLength = _reader.Length;
+                    currentLine = sr.ReadLine();   // reading from file 
 
-                    sr.BaseStream.Position = nextLinePosition;
+                    if (currentLine.Contains(Entry))
+                    {
+                        currentLine = currentLine.Replace(Entry, Substitute);
 
-                    nextLine = sr.ReadLine();   // reading from file 
+                        Amount += currentLine.Split(new string[] { Substitute }, StringSplitOptions.None).Length - 1;
 
-                    nextLinePosition += Encoding.UTF8.GetByteCount(nextLine) + 2;
-                }
+                    }
+                    sw.WriteLine(currentLine); // writing to file
 
-                nextLine = _regex.Replace(nextLine, Substitute);
-
-                using (var sw = _writer.GetWriter())
-                {
-                    sw.WriteLine(nextLine); // writing to file
-                }
-
-                Amount += Regex.Split(nextLine, @"\W+")
-                        .Where(x => x == Substitute).Count();
-            } while (nextLinePosition < streamLength);
-
+                } while (!sr.EndOfStream);
+            }
             _writer.ReplaceWithTempFile();
         }
     }

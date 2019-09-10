@@ -16,13 +16,9 @@ namespace FileParser
 
         protected ReadStreamProvider _reader;
 
-        protected WriteStreamProvider _writer;
-
         public TextHandler(string path)
         {
             _reader = new ReadStreamProvider(path);
-
-            _writer = new WriteStreamProvider(path);
         }
 
        

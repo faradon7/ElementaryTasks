@@ -8,6 +8,6 @@ namespace Interfaces
 {
     public interface INumberParser
     {
-        double[] ExtractDigits(string[] args, out bool isExtracted);
+        int[] ExtractDigits(string[] args, out bool isExtracted);
     }
 }

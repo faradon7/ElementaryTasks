@@ -15,12 +15,10 @@ namespace FibonacciSequence.Tests
 
             SequenceGenerator Generator = new SequenceGenerator();
 
-            double from = 7.0;
-
-            double to = 144.0;
+            int from = 7;
+            int to = 144;
 
             //Act
-
             
             var result = Generator.GetSequence(from, to);
 
@@ -35,66 +33,39 @@ namespace FibonacciSequence.Tests
 
             SequenceGenerator Generator = new SequenceGenerator();
 
-            double from = 7D;
+            int from = 7;
+            int to = 144;
 
-            double to = 144;
-
-            string expected = "8, 13, 21, 34, 55, 89, 144";
+            IEnumerable<int> expected = new int[] { 8, 13, 21, 34, 55, 89, 144 };
 
             //Act
 
-            var sequence = Generator.GetSequence(from, to);
+            var result = Generator.GetSequence(from, to);
 
-            StringBuilder result = new StringBuilder();
+            //Assert
 
-            foreach (var number in sequence)
-            {
-                result.Append(number);
-                result.Append(", ");
-            }
-            Assert.Equal(expected, result.ToString());
+            Assert.Equal(expected, result);
         }
 
         [Fact]
-        public void Can_Get_Number_By_Row_Position()
+        public void Can_Return_Empty_Collection()
         {
             //Arrange 
 
             SequenceGenerator Generator = new SequenceGenerator();
 
-            double expected = 6765D;
+            int from = 6;
+            int to = 7;
 
-            double positionNumber = 20;
-
-            //Act
-
-            var result = Generator.GetByPositionNumber(positionNumber);
-
-            //Assert
-
-            Assert.Equal(result, expected);
-        }
-
-        [Fact]
-        public void Can_Find_Nearest_Greater_Number()
-        {
-            //Arrange 
-
-            SequenceGenerator Generator = new SequenceGenerator();
-
-            double expected = 89D;
-
-            double number = 56;
-
-            double position;
+            //var expected = 0;
 
             //Act
 
-            var result = Generator.FindNearestNumber(number, out position);
+            var result = Generator.GetSequence(from, to);
 
             //Assert
 
-            Assert.Equal(result, expected);
+            Assert.Empty(result);
         }
     }
 }

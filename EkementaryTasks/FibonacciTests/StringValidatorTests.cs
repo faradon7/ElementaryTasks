@@ -68,7 +68,7 @@ namespace FibonacciSequence.Tests
 
             INumberValidator NumberValidator = new Validator();
 
-            var incorrectRange = new double[] { 57, 56 };
+            var incorrectRange = new int[] { 57, 56 };
 
             //Act
 

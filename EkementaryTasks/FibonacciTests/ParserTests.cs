@@ -34,7 +34,7 @@ namespace FibonacciSequence.Tests
         }
 
         [Fact]
-        public void Can_Parse_String_To_Double()
+        public void Can_Parse_String_To_Integer()
         {
             //Arrange 
 

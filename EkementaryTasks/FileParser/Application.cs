@@ -13,6 +13,10 @@ namespace FileParser
 
         private IFileParserView _userCommunication;
 
+        private StringsCounter counter { get; set; }
+
+        private StringReplacer replacer { get; set; }
+
         public Application(IFileParserView ui)
         {
             _userCommunication = ui;
@@ -41,7 +45,7 @@ namespace FileParser
                         if ((_fileValidator.validateAll(arqs[0], out posibleErrors)))
                         {
 
-                            StringsCounter counter = new StringsCounter(arqs[0], arqs[1]);
+                            counter = new StringsCounter(arqs[0], arqs[1]);
 
                             counter.Count();
 
@@ -64,7 +68,7 @@ namespace FileParser
                         if ((_fileValidator.validateAll(arqs[0], out posibleErrors)))
                         {
 
-                            StringReplacer replacer = new StringReplacer(arqs[0], arqs[1], arqs[2]);
+                            replacer = new StringReplacer(arqs[0], arqs[1], arqs[2]);
 
                             replacer.Replace();
 

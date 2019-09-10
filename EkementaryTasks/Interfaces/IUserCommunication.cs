@@ -13,7 +13,7 @@ namespace Interfaces
 
         string[] GetUserInput(string[] startMessage);
 
-        void PrintArqs(double[] args);
+        void PrintArqs(int[] args);
 
         void Output(StringBuilder sb);
 
@@ -25,7 +25,7 @@ namespace Interfaces
 
         void MessageLn (string message);
 
-        void Print(IEnumerable collection);
+        void Print(int i);
 
         bool WantContinue();
     }

@@ -53,7 +53,7 @@ namespace Helpers
             Console.WriteLine(sb);
         }
 
-        public void PrintArqs(double[] args)
+        public void PrintArqs(int[] args)
         {
             StringBuilder s = new StringBuilder("from ");
             s.Append(args[0]);
@@ -63,14 +63,10 @@ namespace Helpers
 
         }
 
-        public void Print(IEnumerable row)
+        public void Print(int i)
         {
-            foreach (var item in row)
-            {
-                Console.Write(item);
-                Console.Write(", ");
-            }
-            Console.WriteLine();
+            
+            Console.Write(i);
         }
 
         public void PrintInstructions(StringBuilder sb)
@@ -113,7 +109,7 @@ namespace Helpers
                     {
                         return UserResponse.Count;
                     }
-                    case ("R"):
+                case ("R"):
                     {
                         return UserResponse.Replace;
                     }

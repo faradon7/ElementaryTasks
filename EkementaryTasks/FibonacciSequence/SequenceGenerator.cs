@@ -6,58 +6,70 @@ using Interfaces;
 
 namespace FibonacciSequence
 {
-    public class SequenceGenerator : IEnumerable
+    public class SequenceGenerator : IEnumerable<int>
     {
         #region fields
 
-        private double ln5d2 = Math.Log(5) / 2; // Ln(5) / 2
+        private double ln5d2 = Math.Log(5) / 2;     // Ln(5) / 2
 
-        private double lnFi = Math.Log((1 + Math.Sqrt(5)) / 2);  //The natural logarithm of a Fi, where Fi is a "Golden Ratio"
+        private double lnFi = Math.Log((1 + Math.Sqrt(5)) / 2);     //The natural logarithm of a Fi, where Fi is a "Golden Ratio"
 
-        private double from = 0.0;
+        private int from = 0;
 
-        private double to = 0.0;
+        private int to = 0;
 
-        double biggerNearest = 0.0;
+        public int biggerNearest = 0;
 
-        double nextNumber = 0.0;
+        public int nextNumber = 0;
 
-        double sum = 0.0;
+        private int sum = 0;
 
         #endregion
 
-        #region methods
-
-        public double GetByPositionNumber(double k)
+        public SequenceGenerator()
         {
-            return Math.Round(Math.Exp(k * lnFi - ln5d2));
         }
 
-        public IEnumerable GetSequence(double start, double end)
+        #region methods
+
+        public int GetByPositionNumber(int k)
+        {
+            return (int)Math.Round(Math.Exp(k * lnFi - ln5d2));
+        }
+
+        public IEnumerable<int> GetSequence(int start, int end)
         {
             from = start;
             to = end;
 
-            double k = 0.0;
+            int k = 0;
 
             biggerNearest = FindNearestNumber(from, out k);
 
-            nextNumber = GetByPositionNumber(k + 1);
+            if (biggerNearest > to)
+            {
+                biggerNearest = 0;
+            }
+            else
+            {
+                nextNumber = GetByPositionNumber(k + 1);
+            }
 
-            return this as IEnumerable;
+            return this as IEnumerable<int>;
         }
 
-        public double FindNearestNumber(double n, out double k)
+        public int FindNearestNumber(double n, out int k)
         {
             // Finding the nearest bigger Fibonacci number bye the Binet's formula
 
-            k = Math.Round((ln5d2 + Math.Log(n)) / lnFi);   // number of Fibonacci sequence member
+            k = (int)Math.Round((ln5d2 + Math.Log(n)) / lnFi);      // number of Fibonacci sequence member
 
-            double nearest = Math.Round(Math.Exp(k * lnFi - ln5d2)); // nearest bigger Fibonacci number
+            int nearest = (int)Math.Round(Math.Exp(k * lnFi - ln5d2));      // nearest bigger Fibonacci number
 
-            if (nearest < n) //if the nearest number less than required
+            if (nearest < n)        //if the nearest number less than required
             {
-                nearest = GetByPositionNumber(k + 1); // return next number of Fibonacci sequence
+                nearest = GetByPositionNumber(k + 1);       // return next number of Fibonacci sequence
+                k++;
             }
 
             return nearest;
@@ -65,21 +77,33 @@ namespace FibonacciSequence
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            yield return biggerNearest;
+            return GetEnumerator();
+        }
 
-            yield return nextNumber;
-            
-            while ((sum = biggerNearest + nextNumber) <= to)
+        public IEnumerator<int> GetEnumerator()
+        {
+            if (biggerNearest != 0)
             {
-                biggerNearest = nextNumber;
+                yield return biggerNearest;
 
-                nextNumber = sum;
-                yield return sum;
+                if (nextNumber < to)
+                {
+                    yield return nextNumber;
+                }
+
+                while ((sum = biggerNearest + nextNumber) <= to)
+                {
+
+                    biggerNearest = nextNumber;
+                    nextNumber = sum;
+
+                    yield return sum;
+                }
             }
+
             yield break;
         }
 
         #endregion
-
     }
 }
