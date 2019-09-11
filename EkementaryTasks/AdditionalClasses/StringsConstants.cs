@@ -26,6 +26,8 @@ namespace Helpers
 
         public const string digits = "The following numbers were found.";
 
+        public const string NotFound = "Fibonacci numbers not found.";
+
         #endregion
 
         #region remarks

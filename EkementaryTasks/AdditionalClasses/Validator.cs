@@ -1,15 +1,12 @@
 ﻿using System;
 using Interfaces;
 
-
 namespace Helpers
 {
     public class Validator : IStringValidator, INumberValidator
     {
-
         public bool IsValid(string s)
         {
-            
             int i = 0;
             if (string.IsNullOrEmpty(s))
             {
@@ -26,8 +23,6 @@ namespace Helpers
             }
             return true;
         }
-
-
 
         public bool IsValidNumbers(int[] range)
         {

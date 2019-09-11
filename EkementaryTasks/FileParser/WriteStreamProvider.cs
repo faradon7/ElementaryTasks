@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using System.IO;
+using Interfaces;
+using NLog;
 
 namespace FileParser
 {
-    class WriteStreamProvider
+    class WriteStreamProvider : IWriteStreamProvider
     {
-        public string FilePath { get; }
+        private static Logger _logger = LogManager.GetCurrentClassLogger();
 
         protected const int DefaultBufferSize = 10240;
+
+        public string FilePath { get; }
 
         public Encoding DefaultEncoding { get; set; } = Encoding.UTF8;
 
@@ -28,12 +28,12 @@ namespace FileParser
             _backUp = Path.ChangeExtension(Path.GetTempFileName(), "txt");
         }
 
-
         public StreamWriter GetWriter()
         {
+            _logger.Debug("Get StreamWriter attemp");
             StreamWriter writer = new StreamWriter(_tempFile, true, DefaultEncoding, DefaultBufferSize);
 
-                return writer;
+            return writer;
         }
 
         public void ReplaceWithTempFile()

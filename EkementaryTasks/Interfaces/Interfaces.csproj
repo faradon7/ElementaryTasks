@@ -42,11 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IFileParserView.cs" />
+    <Compile Include="IFileValidator.cs" />
     <Compile Include="INumberParser.cs" />
     <Compile Include="INumberValidator.cs" />
+    <Compile Include="IReadStreamProvider.cs" />
+    <Compile Include="IStreamReader.cs" />
     <Compile Include="IStringParser.cs" />
     <Compile Include="IUserCommunication.cs" />
     <Compile Include="IStringValidator.cs" />
+    <Compile Include="IWriteStreamProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

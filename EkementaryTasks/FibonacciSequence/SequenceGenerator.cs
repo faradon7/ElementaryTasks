@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Helpers;
+using FileParser;
 using Interfaces;
 
 namespace FibonacciSequence

@@ -33,3 +33,4 @@ C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\F
 C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\bin\Debug\NLog.xml
 C:\Users\farik\EkementaryTasks\FibonacciSequence\bin\Debug\NLog.dll
 C:\Users\farik\EkementaryTasks\FibonacciSequence\bin\Debug\NLog.xml
+C:\Users\farik\EkementaryTasks\FibonacciSequence\bin\Debug\NLog.config

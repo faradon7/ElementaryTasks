@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessBoard", "ChessBoard\Ch
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FibonacciSequence.Tests", "FibonacciTests\FibonacciSequence.Tests.csproj", "{9E0743B0-7626-4719-A169-231D515D1581}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileParser.Tests", "FileParser.Tests\FileParser.Tests.csproj", "{B73EE2D3-D713-49A2-89ED-C8D27CB16C96}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{9E0743B0-7626-4719-A169-231D515D1581}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E0743B0-7626-4719-A169-231D515D1581}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E0743B0-7626-4719-A169-231D515D1581}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B73EE2D3-D713-49A2-89ED-C8D27CB16C96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B73EE2D3-D713-49A2-89ED-C8D27CB16C96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B73EE2D3-D713-49A2-89ED-C8D27CB16C96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B73EE2D3-D713-49A2-89ED-C8D27CB16C96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

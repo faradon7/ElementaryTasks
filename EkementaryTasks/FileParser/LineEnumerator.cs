@@ -1,20 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
+﻿using System.Collections.Generic;
 using System.Collections;
+using NLog;
+using Interfaces;
+using Helpers;
 
 namespace FileParser
 {
-    class LineEnumerator : IEnumerable<string>
+    public class LineEnumerator : IEnumerable<string>
     {
-        private ReadStreamProvider _provider;
+        private static Logger _logger = LogManager.GetCurrentClassLogger();
+
+        public IReadStreamProvider _provider;
 
         public LineEnumerator(string path)
         {
             _provider = new ReadStreamProvider(path);
+        }
+
+        public ReadStreamProvider ReadStreamProvider
+        {
+            get => default(ReadStreamProvider);
+            set
+            {
+            }
         }
 
         public IEnumerator<string> GetEnumerator()
@@ -22,8 +30,9 @@ namespace FileParser
            return GetEnumeratorImpl(_provider);
         }
 
-        public IEnumerator<string> GetEnumeratorImpl(ReadStreamProvider _provider)
+        public IEnumerator<string> GetEnumeratorImpl(IReadStreamProvider _provider)
         {
+            _logger.Debug("Enumerate text file attemp");
             using (var sr = _provider.GetReader())
             {
                 do

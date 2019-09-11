@@ -1,4 +1,4 @@
-﻿namespace Helpers{
+﻿namespace FileParser{
 
     public enum UserResponse
     {

@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Interfaces;
 
-namespace FileParser
+namespace Helpers
 {
-    class FileValidator : IFileValidator
+    public class FileValidator : IFileValidator
     {
         public bool isNotFileEmpty(string path)
         {
@@ -24,7 +21,7 @@ namespace FileParser
             return new FileInfo(path).Extension == ".txt";
         }
 
-        public bool validateAll(string path, out IList<string> possibleErrors)
+        public bool validateAll(string path, out List<string> possibleErrors)
         {
             possibleErrors = new List<string>();
 

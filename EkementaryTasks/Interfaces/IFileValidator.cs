@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FileParser
+namespace Interfaces
 {
     public interface IFileValidator
     {
@@ -14,6 +14,6 @@ namespace FileParser
 
         bool isNotFileEmpty(string path);
 
-        bool validateAll(string path, out IList<string> possibleErrors);
+        bool validateAll(string path, out List<string> possibleErrors);
     }
 }

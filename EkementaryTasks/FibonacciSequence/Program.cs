@@ -1,18 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Helpers;
+using NLog;
 
 namespace FibonacciSequence
 {
     class Program
     {
-        public static FibonacciSequenceApp Agregate = new FibonacciSequenceApp(new ConsoleUI());
+        private static Logger _logger = LogManager.GetCurrentClassLogger();
+
+        public static FibonacciSequenceApp Application = new FibonacciSequenceApp(new ConsoleUI());
+
         static void Main(string[] args)
         {
-            Agregate.AppStart();
+            _logger.Debug("Running the main application method");
+            Application.AppStart();
         }
     }
 }

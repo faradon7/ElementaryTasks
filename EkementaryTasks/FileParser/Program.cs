@@ -1,29 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Interfaces;
+﻿using NLog;
 using Helpers;
 
 namespace FileParser
 {
     class Program
     {
+        private static Logger _logger = LogManager.GetCurrentClassLogger();
+
         static void Main(string[] args)
         {
             Application app = new Application(new ConsoleUI());
+            _logger.Debug("Running the main application method");
             app.AppStart();
-
-            //StringReplacer rep = new StringReplacer(@"C:\Users\farik\EkementaryTasks\1.txt", "Завет", "обещание");
-
-            //StringsCounter rep = new StringsCounter(@"C:\Users\farik\EkementaryTasks\Biblija.txt", "завет");
-
-            //Console.WriteLine(rep.Replace());
-            //Console.WriteLine("Finish");
-            //Console.ReadLine();
-
         }
     }
 }
