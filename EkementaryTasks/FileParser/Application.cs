@@ -4,6 +4,7 @@ using System.Text;
 using NLog;
 using Helpers;
 using Interfaces;
+using System.Diagnostics;
 
 namespace FileParser
 {
@@ -70,9 +71,9 @@ namespace FileParser
 
                 switch (mode)
                 {
-                    case UserResponse.Count:
+                    case Mode.Count:
 
-                        _logger.Info("Selected mode:" + UserResponse.Count);
+                        _logger.Info("Selected mode:" + Mode.Count);
 
                         arqs = getInputParameters(CountQuery);
 
@@ -92,9 +93,9 @@ namespace FileParser
                             printErrors(posibleErrors);
                         }
 
-                        goto default;
+                        break;
 
-                    case UserResponse.Replace:
+                    case Mode.Replace:
 
                         arqs = getInputParameters(ReplaceQuery);
 
@@ -115,14 +116,16 @@ namespace FileParser
                             printErrors(posibleErrors);
                         }
 
-                        goto default;
+                        break;
 
                     default:
+                        Debug.Assert(false, "getting into default in switch mode");
 
-                        _logger.Debug("Сontinuation request");
-                        wantContinue = _userCommunication.WantContinue();
                         break;
                 }
+
+                _logger.Debug("Сontinuation request");
+                wantContinue = _userCommunication.WantContinue();
 
             } while (wantContinue);
 
@@ -146,7 +149,7 @@ namespace FileParser
         private void printErrors(List<string> errors)
         {
             _logger.Error("File validation error");
-            foreach (var item in errors)
+            foreach (string item in errors)
             {
                 _logger.Warn(item + " ");
                 _userCommunication.Warning(item);

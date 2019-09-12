@@ -77,13 +77,13 @@ namespace FibonacciSequence
             {
                 UserCommunication.Message(StringsConstants.startMessage);
 
-                var start = new[] {
+                string[] start = new[] {
                     "From what number to start the search for values: ",
                     "To which number to look for values: " };
                 _logger.Info("Application requests an input parameters");
 
-                var args = _userCommunication.GetUserInput(start); //TODO: проверка на тип
-                var range = new int[2];
+                string[] args = _userCommunication.GetUserInput(start); //TODO: проверка на тип
+                int[] range = new int[2];
                 _logger.Info("User passed range for search from " +
                     args[0] + "to " + args[1]);
 
@@ -119,7 +119,7 @@ namespace FibonacciSequence
                         _logger.Info("Generated sequence " +
                             string.Join(", ", RangedFibonacciSequence));
 
-                        if (_generator.biggerNearest == 0)
+                        if (_generator.GreaterNearest == 0)
                         {
                             _userCommunication.Message(StringsConstants.NotFound);
                             _logger.Warn(StringsConstants.NotFound);

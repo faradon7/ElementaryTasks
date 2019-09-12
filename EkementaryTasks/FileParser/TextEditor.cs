@@ -4,7 +4,7 @@ using NLog;
 
 namespace FileParser
 {
-    public abstract class TextEditor 
+    public abstract class TextTool
     {
         protected static Logger _logger = LogManager.GetCurrentClassLogger();
 
@@ -22,12 +22,12 @@ namespace FileParser
             }
         }
 
-        protected TextEditor()
+        protected TextTool()
         {
 
         }
 
-        public TextEditor(string path)
+        public TextTool(string path)
         {
             _lineEnumeration = new LineEnumerator(path);
         }

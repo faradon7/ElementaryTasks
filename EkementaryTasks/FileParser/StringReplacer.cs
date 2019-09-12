@@ -5,7 +5,7 @@ using Interfaces;
 
 namespace FileParser
 {
-    class StringReplacer : TextEditor
+    class StringReplacer : TextTool
     {
         private IWriteStreamProvider _writer;
 
@@ -39,7 +39,7 @@ namespace FileParser
             _logger.Debug("Start replacing entries");
             using (var sw = _writer.GetWriter())
             {
-                foreach (var line in _lineEnumeration)
+                foreach (string line in _lineEnumeration)
                 {
                     string currentLine = string.Empty;
 

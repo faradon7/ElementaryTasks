@@ -104,23 +104,23 @@ namespace Helpers
             {
                 case ("C"):
                     {
-                        return UserResponse.Count;
+                        return Mode.Count;
                     }
                 case ("COUNT"):
                     {
-                        return UserResponse.Count;
+                        return Mode.Count;
                     }
                 case ("R"):
                     {
-                        return UserResponse.Replace;
+                        return Mode.Replace;
                     }
                 case ("REPLACE"):
                     {
-                        return UserResponse.Replace;
+                        return Mode.Replace;
                     }
 
                 default:
-                    return UserResponse.Exit;
+                    return Mode.Exit;
             }
         }
     }

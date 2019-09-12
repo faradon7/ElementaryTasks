@@ -1,6 +1,6 @@
 ﻿namespace FileParser{
 
-    public enum UserResponse
+    public enum Mode
     {
         Count,
         Replace,

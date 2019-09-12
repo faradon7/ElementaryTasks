@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 [assembly: InternalsVisibleTo("FileParser.Tests")]
 namespace FileParser
 {
-    class StringsCounter : TextEditor
+    class StringsCounter : TextTool
     {
         public StringsCounter(string entry, IEnumerable<string> collection)
         {
@@ -23,7 +23,7 @@ namespace FileParser
         public void Count()
         {
             _logger.Debug("Start entries counting");
-            foreach (var line in _lineEnumeration)
+            foreach (string line in _lineEnumeration)
             {
                 if (line.ToLowerInvariant().Contains(Entry))
                 {
