@@ -1,0 +1,35 @@
+C:\Users\farik\source\repos\NumericalSequence\FibonacciSequence\bin\Debug\FibonacciSequence.exe.config
+C:\Users\farik\source\repos\NumericalSequence\FibonacciSequence\bin\Debug\FibonacciSequence.exe
+C:\Users\farik\source\repos\NumericalSequence\FibonacciSequence\bin\Debug\FibonacciSequence.pdb
+C:\Users\farik\source\repos\NumericalSequence\FibonacciSequence\obj\Debug\FibonacciSequence.csprojAssemblyReference.cache
+C:\Users\farik\source\repos\NumericalSequence\FibonacciSequence\obj\Debug\FibonacciSequence.csproj.CoreCompileInputs.cache
+C:\Users\farik\source\repos\NumericalSequence\FibonacciSequence\obj\Debug\FibonacciSequence.exe
+C:\Users\farik\source\repos\NumericalSequence\FibonacciSequence\obj\Debug\FibonacciSequence.pdb
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.csprojAssemblyReference.cache
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.csproj.CoreCompileInputs.cache
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.exe
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.pdb
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\bin\Debug\FibonacciSequence.exe.config
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\bin\Debug\FibonacciSequence.exe
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\bin\Debug\FibonacciSequence.pdb
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.csproj.CopyComplete
+C:\Users\farik\EkementaryTasks\FibonacciSequence\bin\Debug\FibonacciSequence.exe.config
+C:\Users\farik\EkementaryTasks\FibonacciSequence\bin\Debug\FibonacciSequence.exe
+C:\Users\farik\EkementaryTasks\FibonacciSequence\bin\Debug\FibonacciSequence.pdb
+C:\Users\farik\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.csprojAssemblyReference.cache
+C:\Users\farik\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.csproj.CoreCompileInputs.cache
+C:\Users\farik\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.csproj.CopyComplete
+C:\Users\farik\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.exe
+C:\Users\farik\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.pdb
+C:\Users\farik\EkementaryTasks\FibonacciSequence\bin\Debug\AdditionalClasses.dll
+C:\Users\farik\EkementaryTasks\FibonacciSequence\bin\Debug\Interfaces.dll
+C:\Users\farik\EkementaryTasks\FibonacciSequence\bin\Debug\AdditionalClasses.pdb
+C:\Users\farik\EkementaryTasks\FibonacciSequence\bin\Debug\Interfaces.pdb
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\bin\Debug\AdditionalClasses.dll
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\bin\Debug\Interfaces.dll
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\bin\Debug\AdditionalClasses.pdb
+C:\Users\Мира\Desktop\SoftServe IT Academy\ElementaryTasks\EkementaryTasks\FibonacciSequence\bin\Debug\Interfaces.pdb
+I:\IT-FRIENDS - Github\ElementaryTasks\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.csprojAssemblyReference.cache
+I:\IT-FRIENDS - Github\ElementaryTasks\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.csproj.CoreCompileInputs.cache
+I:\IT-FRIENDS - Github\ElementaryTasks\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.exe
+I:\IT-FRIENDS - Github\ElementaryTasks\EkementaryTasks\FibonacciSequence\obj\Debug\FibonacciSequence.pdb
